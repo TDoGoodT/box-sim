@@ -33,7 +33,7 @@ def plot_option(body, op):
 class Box:
     def __init__(self, def_arr):
         self.def_arr = def_arr
-        self.body = np.array([[0, 0, 0] for i in range(27)])
+        self.body = np.array([[0, 0, 0] for i in range(27)], int)
         self.solution = None
         self.body_db = {}
         self.dir_db = {}
@@ -134,7 +134,7 @@ class Box:
     def solve(self):
         # self.plot_init()
         options = [[0]]
-        for _ in range(1, 27):
+        for _ in range(1, 26):
             next_options = []
             call("clear")
             print(len(options[0]))
@@ -149,8 +149,4 @@ class Box:
                 except Exception:
                     break
                 print(len(op) + 1)
-        try:
-            op = options[0]
-        except Exception:
-            return
         return self.body_db[str(op)], op
