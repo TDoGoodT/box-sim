@@ -1,6 +1,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.spatial.transform import Rotation as R
+
 def get_full_states_tree(depth):
     G = GraphVisualization()
     options = ['0']
@@ -52,5 +54,5 @@ class GraphVisualization:
         nx.draw_networkx(G,pos=nx.kamada_kawai_layout(G),node_size=10,with_labels=False)
         plt.show()
 
-G = get_full_states_tree(5)
-G.visualize()
+# G = get_full_states_tree(5)
+# G.visualize()
