@@ -18,7 +18,13 @@ After trying to solve this puzzle many times, testing diffrent approaches I coul
 
 # Using box_sim
 If you want to understand more go to Snake2Box.ipynb
-<pre><code>                    
+<pre><code>   
+pip install poetry # if you didn't installed yet
+git clone <repo url>
+cd <repo name>
+poetry install
+
+poetry puzzle.py --help
 usage: puzzle.py [-h] --algo a [--depth d] [--viz_snake] [--viz_tree]
 
 optional arguments:
