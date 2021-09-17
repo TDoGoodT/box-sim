@@ -13,7 +13,8 @@ The goal is to twist the blocks so that the 27 blocks form a cube… again.
 After trying to solve this puzzle many times, testing diffrent approaches I couldn't find any other way than simulate this issue with Python.
 
 ## The results
-![Visualization of the solution](mygif.gif)
+![Visualization of the algorithem](mygif.gif)
+![Visualization of the solution](done.png)
 
 # Using box_sim
 If you want to understand more go to Snake2Box.ipynb
