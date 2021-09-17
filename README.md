@@ -26,3 +26,5 @@ optional arguments:
   --viz_snake  Visualize the snake when done.\
   --viz_tree   Visualize the traversed tree when done.\
   </pre></code>
+
+![Using tree_viz](tree.gif)
