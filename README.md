@@ -16,6 +16,7 @@ After trying to solve this puzzle many times, testing diffrent approaches I coul
 ![Visualization of the solution](mygif.gif)
 
 # Using box_sim
+If you want to understand more go to Snake2Box.ipynb
 <pre><code>                    
 usage: puzzle.py [-h] --algo a [--depth d] [--viz_snake] [--viz_tree]
 
