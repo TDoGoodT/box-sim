@@ -20,8 +20,8 @@ After trying to solve this puzzle many times, testing diffrent approaches I coul
 If you want to understand more go to Snake2Box.ipynb
 <pre><code>   
 pip install poetry # if you didn't installed yet
-git clone <repo url>
-cd <repo name>
+git clone \<repo url\>
+cd \<repo name\>
 poetry install
 
 poetry puzzle.py --help
