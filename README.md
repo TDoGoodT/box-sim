@@ -24,7 +24,7 @@ git clone "repo url"
 cd "repo name"
 poetry install
 
-poetry puzzle.py --help
+poetry ./puzzle.py --help
 usage: puzzle.py [-h] --algo a [--depth d] [--viz_snake] [--viz_tree]
 
 optional arguments:
