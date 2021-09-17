@@ -2,6 +2,60 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.spatial.transform import Rotation as R
+from option_tree import OptionsTree
+
+def_arr = [
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+]
+def get_full_states_tree_df(depth):
+    G = OptionsTree()
+    options = ['0']
+    new_options = []
+
+    for i in range(1,depth-1):
+        for option in options:
+            for j in range(4):
+                new_option = option + str(j)
+                new_options.append(new_option)
+                G.addEdge(option, new_option)
+                # print(option +","+ new_option)
+
+        options = new_options
+        new_options = []
+    for option in options:
+            new_option = option + str(0)
+            new_options.append(new_option)
+            G.addEdge(option, new_option)
+            # print(option +","+ new_option)
+
+
+    return G.DB.copy()
 
 def get_full_states_tree(depth):
     G = GraphVisualization()
@@ -26,6 +80,7 @@ def get_full_states_tree(depth):
 
 
     return G
+
 
 # Defining a Class
 class GraphVisualization:
@@ -54,8 +109,12 @@ class GraphVisualization:
     # creates a graph with a given list
     # nx.draw_networkx(G) - plots the graph
     # plt.show() - displays the graph
-    def visualize(self):
+    def visualize_kamda(self):
         nx.draw_networkx(self.G,pos=nx.kamada_kawai_layout(self.G),node_size=10,with_labels=False)
+        plt.show()
+    
+    def visualize(self):
+        nx.draw_networkx(self.G,node_size=10,with_labels=False)
         plt.show()
 
 # G = get_full_states_tree(5)

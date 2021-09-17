@@ -1,0 +1,3800 @@
+-I- 448 
+-I- 392 
+-I- 392 
+-I- going from 000000000000000000000000000 to 000000000000000000000000300
+-I- 392 
+-I- 392 
+-I- 392 
+-I- 392 
+-I- going from 000000000000000000000000300 to 000000001000000000000000300
+-I- 392 
+-I- 294 
+-I- 294 
+-I- going from 000000001000000000000000300 to 000000001000030000000000300
+-I- 288 
+-I- 210 
+-I- 192 
+-I- going from 000000001000030000000000300 to 000000001000030300000000300
+-I- 180 
+-I- 96 
+-I- 90 
+-I- 192 
+-I- going from 000000001000030300000000300 to 000000001003030300000000300
+-I- 180 
+-I- 96 
+-I- 90 
+-I- going from 000000001003030300000000300 to 000000001003030300000000300
+-I- 80 
+-I- validation failed skipping
+-I- 90 
+-I- going from 000000001003030300000000300 to 000000001003030300000000310
+-I- 126 
+-I- validation failed skipping
+-I- 80 
+-I- 100 
+-I- going from 000000001003030300000000310 to 000000001003030300000000010
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 144 
+-I- going from 000000001003030300000000010 to 000000001003330300000000010
+-I- 144 
+-I- validation failed skipping
+-I- 84 
+-I- going from 000000001003330300000000010 to 000000001003330300000000310
+-I- 96 
+-I- 144 
+-I- 140 
+-I- 84 
+-I- going from 000000001003330300000000310 to 000000001003330300000000310
+-I- 96 
+-I- 144 
+-I- 140 
+-I- 84 
+-I- going from 000000001003330300000000310 to 000000001003330300000000310
+-I- validation failed skipping
+-I- 64 
+-I- validation failed skipping
+-I- going from 000000001003330300000000310 to 000000001002330300000000310
+-I- 42 
+-I- 48 
+-I- 84 
+-I- going from 000000001002330300000000310 to 000000001002330310000000310
+-I- 42 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 000000001002330310000000310 to 001000001002330310000000310
+-I- 84 
+-I- 60 
+-I- 42 
+-I- 100 
+-I- going from 001000001002330310000000310 to 001000001002330310000000310
+-I- 42 
+-I- 14 
+-I- validation failed skipping
+-I- going from 001000001002330310000000310 to 001200001002330310000000310
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- 14 
+-I- going from 001200001002330310000000310 to 001200001002330310000000310
+-I- 24 
+-I- validation failed skipping
+-I- 18 
+-I- going from 001200001002330310000000310 to 001200001002333310000000310
+-I- 84 
+-I- 18 
+-I- validation failed skipping
+-I- 90 
+-I- going from 001200001002333310000000310 to 001200001002333310000000310
+-I- 24 
+-I- validation failed skipping
+-I- 14 
+-I- going from 001200001002333310000000310 to 001200001002330310000000310
+-I- validation failed skipping
+-I- 28 
+-I- 32 
+-I- going from 001200001002330310000000310 to 001200001002330310000000330
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 001200001002330310000000330 to 011200001002330310000000330
+-I- 36 
+-I- 24 
+-I- 16 
+-I- going from 011200001002330310000000330 to 011200001002330310000003330
+-I- 36 
+-I- 24 
+-I- 16 
+-I- 28 
+-I- going from 011200001002330310000003330 to 011200001002330310000000330
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 011200001002330310000000330 to 011200001002330310000010330
+-I- 32 
+-I- validation failed skipping
+-I- 36 
+-I- 28 
+-I- going from 011200001002330310000010330 to 011200001002330310000010330
+-I- 28 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200001002330310000010330 to 011200001002330310000010330
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 011200001002330310000010330 to 011200002002330310000010330
+-I- 56 
+-I- validation failed skipping
+-I- 72 
+-I- going from 011200002002330310000010330 to 011200002002310310000010330
+-I- 60 
+-I- 40 
+-I- validation failed skipping
+-I- 56 
+-I- going from 011200002002310310000010330 to 011200002002310310000010330
+-I- 56 
+-I- validation failed skipping
+-I- 112 
+-I- 81 
+-I- going from 011200002002310310000010330 to 011200002002310310000010330
+-I- 56 
+-I- 56 
+-I- 56 
+-I- going from 011200002002310310000010330 to 011200001002310310000010330
+-I- 168 
+-I- validation failed skipping
+-I- 144 
+-I- going from 011200001002310310000010330 to 011200001002310010000010330
+-I- 120 
+-I- 144 
+-I- 168 
+-I- 84 
+-I- going from 011200001002310010000010330 to 011200001000310010000010330
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 011200001000310010000010330 to 011200001000310010000020330
+-I- 84 
+-I- 60 
+-I- 60 
+-I- 120 
+-I- going from 011200001000310010000020330 to 011200001000310030000020330
+-I- 60 
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 011200001000310030000020330 to 011200001000310030001020330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 011200001000310030001020330 to 011200001000310030001010330
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200001000310030001010330 to 011200001000310030001010330
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 011200001000310030001010330 to 011200001000310030001010330
+-I- 80 
+-I- validation failed skipping
+-I- 40 
+-I- 60 
+-I- going from 011200001000310030001010330 to 011200001000310030001010330
+-I- 72 
+-I- 36 
+-I- 36 
+-I- 60 
+-I- going from 011200001000310030001010330 to 011200001000310030001010330
+-I- 72 
+-I- 112 
+-I- 120 
+-I- going from 011200001000310030001010330 to 011200001001310030001010330
+-I- 63 
+-I- 80 
+-I- 75 
+-I- 72 
+-I- going from 011200001001310030001010330 to 011200001011310030001010330
+-I- 175 
+-I- validation failed skipping
+-I- 180 
+-I- going from 011200001011310030001010330 to 011200001011110030001010330
+-I- 175 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 180 
+-I- going from 011200001011110030001010330 to 011200001011110030001010330
+-I- 112 
+-I- validation failed skipping
+-I- 168 
+-I- 175 
+-I- going from 011200001011110030001010330 to 011200001011110031001010330
+-I- validation failed skipping
+-I- 84 
+-I- 120 
+-I- 112 
+-I- going from 011200001011110031001010330 to 011200001011110031201010330
+-I- 105 
+-I- 108 
+-I- 72 
+-I- going from 011200001011110031201010330 to 011200001011110031201013330
+-I- 120 
+-I- 72 
+-I- validation failed skipping
+-I- 108 
+-I- going from 011200001011110031201013330 to 011000001011110031201013330
+-I- 18 
+-I- validation failed skipping
+-I- 125 
+-I- going from 011000001011110031201013330 to 011000001021110031201013330
+-I- 18 
+-I- validation failed skipping
+-I- 27 
+-I- going from 011000001021110031201013330 to 011000001021110031201013130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 14 
+-I- 18 
+-I- going from 011000001021110031201013130 to 011000001021110331201013130
+-I- 14 
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 011000001021110331201013130 to 011000001021110331201013130
+-I- validation failed skipping
+-I- 24 
+-I- 24 
+-I- going from 011000001021110331201013130 to 011000001021110331201013330
+-I- validation failed skipping
+-I- 24 
+-I- 24 
+-I- going from 011000001021110331201013330 to 011000001021110331201013330
+-I- 30 
+-I- 16 
+-I- validation failed skipping
+-I- going from 011000001021110331201013330 to 011200001021110331201013330
+-I- validation failed skipping
+-I- 72 
+-I- 72 
+-I- going from 011200001021110331201013330 to 011200001023110331201013330
+-I- 63 
+-I- validation failed skipping
+-I- 72 
+-I- 72 
+-I- going from 011200001023110331201013330 to 011200001023110331201013130
+-I- 20 
+-I- 56 
+-I- validation failed skipping
+-I- going from 011200001023110331201013130 to 011200001013110331201013130
+-I- 36 
+-I- 24 
+-I- 24 
+-I- going from 011200001013110331201013130 to 011200001013110331201010130
+-I- 42 
+-I- 24 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200001013110331201010130 to 011200001013110331201010130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- 24 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200001013110331201010130 to 011200001013110331201010130
+-I- 24 
+-I- 16 
+-I- validation failed skipping
+-I- 24 
+-I- going from 011200001013110331201010130 to 011200001013120331201010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200001013120331201010130 to 011200101013120331201010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200101013120331201010130 to 011200101013120331202010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200101013120331202010130 to 011200101013120331202010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200101013120331202010130 to 011200101013120331202010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200101013120331202010130 to 011200101013120331202010130
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 011200101013120331202010130 to 011200102013120331202010130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 011200102013120331202010130 to 011200102013123331202010130
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011200102013123331202010130 to 011200102013123331202010130
+-I- validation failed skipping
+-I- 28 
+-I- validation failed skipping
+-I- going from 011200102013123331202010130 to 011200102013123231202010130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- 28 
+-I- going from 011200102013123231202010130 to 011200102013123231202010130
+-I- 28 
+-I- validation failed skipping
+-I- 56 
+-I- 30 
+-I- going from 011200102013123231202010130 to 011200102013123231202010130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- 60 
+-I- validation failed skipping
+-I- going from 011200102013123231202010130 to 011200102023123231202010130
+-I- 72 
+-I- 60 
+-I- 75 
+-I- going from 011200102023123231202010130 to 011200102023123231202010120
+-I- validation failed skipping
+-I- 36 
+-I- 60 
+-I- validation failed skipping
+-I- going from 011200102023123231202010120 to 011200102023123221202010120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 011200102023123221202010120 to 011200102023123221202010120
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011200102023123221202010120 to 011200102023123221201010120
+-I- 20 
+-I- validation failed skipping
+-I- 24 
+-I- going from 011200102023123221201010120 to 011200102023123221201010220
+-I- 20 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200102023123221201010220 to 011200102023123221201010220
+-I- 36 
+-I- validation failed skipping
+-I- 28 
+-I- going from 011200102023123221201010220 to 011000102023123221201010220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 28 
+-I- validation failed skipping
+-I- going from 011000102023123221201010220 to 011000102023123221201010220
+-I- 36 
+-I- validation failed skipping
+-I- going from 011000102023123221201010220 to 011100102023123221201010220
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011100102023123221201010220 to 011100102023123221201010220
+-I- 63 
+-I- validation failed skipping
+-I- 42 
+-I- going from 011100102023123221201010220 to 011100102023123221201010020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- 63 
+-I- going from 011100102023123221201010020 to 011100102023123221301010020
+-I- 42 
+-I- 32 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011100102023123221301010020 to 011100102023223221301010020
+-I- 32 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- validation failed skipping
+-I- 32 
+-I- 56 
+-I- 48 
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- 32 
+-I- validation failed skipping
+-I- 32 
+-I- validation failed skipping
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- validation failed skipping
+-I- 32 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- validation failed skipping
+-I- 32 
+-I- validation failed skipping
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- 32 
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- going from 011100102023223221301010020 to 011100102023223221301010020
+-I- 30 
+-I- validation failed skipping
+-I- 20 
+-I- 32 
+-I- going from 011100102023223221301010020 to 011100102023223221301013020
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 011100102023223221301013020 to 021100102023223221301013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- validation failed skipping
+-I- going from 021100102023223221301013020 to 021100102023223221301013020
+-I- 45 
+-I- validation failed skipping
+-I- 40 
+-I- going from 021100102023223221301013020 to 021100102023023221301013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 021100102023023221301013020 to 021000102023023221301013020
+-I- 40 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021000102023023221301013020 to 021100102023023221301013020
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 021100102023023221301013020 to 021100102023023221301013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- 40 
+-I- 72 
+-I- 50 
+-I- going from 021100102023023221301013020 to 021100102023023221301013020
+-I- 40 
+-I- 24 
+-I- 24 
+-I- going from 021100102023023221301013020 to 021130102023023221301013020
+-I- 32 
+-I- 24 
+-I- 48 
+-I- 30 
+-I- going from 021130102023023221301013020 to 021130102023023221301013000
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021130102023023221301013000 to 021130102023023221301013000
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 021130102023023221301013000 to 021130102023023221301013000
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 021130102023023221301013000 to 021130101023023221301013000
+-I- 50 
+-I- 30 
+-I- 50 
+-I- going from 021130101023023221301013000 to 021120101023023221301013000
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021120101023023221301013000 to 021120101023023221301013000
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 021120101023023221301013000 to 021120102023023221301013000
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- going from 021120102023023221301013000 to 021120102023023221301013000
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021120102023023221301013000 to 021120102023023221301013000
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021120102023023221301013000 to 021120102023023221301013000
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 24 
+-I- going from 021120102023023221301013000 to 021120102023020221301013000
+-I- 18 
+-I- 16 
+-I- 24 
+-I- going from 021120102023020221301013000 to 021120102023020221301013200
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 021120102023020221301013200 to 021120101023020221301013200
+-I- 16 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021120101023020221301013200 to 021120101023020221301013200
+-I- 24 
+-I- 16 
+-I- 16 
+-I- 24 
+-I- going from 021120101023020221301013200 to 021130101023020221301013200
+-I- validation failed skipping
+-I- 8 
+-I- 16 
+-I- 12 
+-I- going from 021130101023020221301013200 to 021130101022020221301013200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- 8 
+-I- 8 
+-I- 8 
+-I- going from 021130101022020221301013200 to 021130101022020221301013200
+-I- validation failed skipping
+-I- 12 
+-I- validation failed skipping
+-I- going from 021130101022020221301013200 to 021130101022020223301013200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- validation failed skipping
+-I- going from 021130101022020223301013200 to 021130101022020233301013200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 20 
+-I- going from 021130101022020233301013200 to 021130101022020233301013200
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 021130101022020233301013200 to 021130101022020233301013200
+-I- 30 
+-I- 12 
+-I- 20 
+-I- 36 
+-I- going from 021130101022020233301013200 to 021130101022020233301013200
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- going from 021130101022020233301013200 to 021130101022020333301013200
+-I- 40 
+-I- 30 
+-I- 30 
+-I- going from 021130101022020333301013200 to 021130101022020333301010200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- going from 021130101022020333301010200 to 021130101022020333301010200
+-I- validation failed skipping
+-I- 24 
+-I- 24 
+-I- 30 
+-I- going from 021130101022020333301010200 to 021130101022020333301010220
+-I- 24 
+-I- validation failed skipping
+-I- 48 
+-I- going from 021130101022020333301010220 to 021130101012020333301010220
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 021130101012020333301010220 to 011130101012020333301010220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- going from 011130101012020333301010220 to 011130101010020333301010220
+-I- 84 
+-I- 72 
+-I- validation failed skipping
+-I- 96 
+-I- going from 011130101010020333301010220 to 011130101010020333301010220
+-I- 120 
+-I- 60 
+-I- 108 
+-I- going from 011130101010020333301010220 to 011130101010000333301010220
+-I- 125 
+-I- validation failed skipping
+-I- 105 
+-I- going from 011130101010000333301010220 to 011030101010000333301010220
+-I- 105 
+-I- 105 
+-I- 105 
+-I- going from 011030101010000333301010220 to 011030201010000333301010220
+-I- validation failed skipping
+-I- 105 
+-I- 105 
+-I- 120 
+-I- going from 011030201010000333301010220 to 011030201010000333301010220
+-I- 120 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030201010000333301010220 to 011030201010100333301010220
+-I- 84 
+-I- 84 
+-I- 120 
+-I- validation failed skipping
+-I- going from 011030201010100333301010220 to 011030201010100331301010220
+-I- 84 
+-I- validation failed skipping
+-I- going from 011030201010100331301010220 to 011030201010100332301010220
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 011030201010100332301010220 to 011030201010100332301020220
+-I- 120 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011030201010100332301020220 to 011030201010100332301020220
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 011030201010100332301020220 to 011030201010100332302020220
+-I- 120 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011030201010100332302020220 to 011030201010100332302020220
+-I- 120 
+-I- validation failed skipping
+-I- 90 
+-I- going from 011030201010100332302020220 to 011030201010130332302020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 70 
+-I- going from 011030201010130332302020220 to 010030201010130332302020220
+-I- 64 
+-I- 70 
+-I- 72 
+-I- validation failed skipping
+-I- going from 010030201010130332302020220 to 010030201010130331302020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 64 
+-I- 64 
+-I- 64 
+-I- going from 010030201010130331302020220 to 020030201010130331302020220
+-I- 64 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020030201010130331302020220 to 020030201010130331302020220
+-I- 96 
+-I- 48 
+-I- 80 
+-I- going from 020030201010130331302020220 to 020030201010130331002020220
+-I- 64 
+-I- 60 
+-I- 96 
+-I- going from 020030201010130331002020220 to 020030201010130333002020220
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 020030201010130333002020220 to 020030101010130333002020220
+-I- 96 
+-I- 36 
+-I- 60 
+-I- 112 
+-I- going from 020030101010130333002020220 to 020030101010130333002020220
+-I- 75 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020030101010130333002020220 to 021030101010130333002020220
+-I- 60 
+-I- validation failed skipping
+-I- 80 
+-I- going from 021030101010130333002020220 to 021030101010130333102020220
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 021030101010130333102020220 to 011030101010130333102020220
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030101010130333102020220 to 011030101010131333102020220
+-I- 75 
+-I- 45 
+-I- 45 
+-I- 63 
+-I- going from 011030101010131333102020220 to 011030101010131333102020220
+-I- validation failed skipping
+-I- 30 
+-I- 56 
+-I- going from 011030101010131333102020220 to 011030101010131332102020220
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030101010131332102020220 to 011030201010131332102020220
+-I- validation failed skipping
+-I- 30 
+-I- 30 
+-I- 45 
+-I- going from 011030201010131332102020220 to 011030201010131332102020220
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030201010131332102020220 to 011030201010131332101020220
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030201010131332101020220 to 011030201010131332101020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030201010131332101020220 to 011030201010131332101020220
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030201010131332101020220 to 011030101010131332101020220
+-I- validation failed skipping
+-I- 30 
+-I- 30 
+-I- 45 
+-I- going from 011030101010131332101020220 to 011030101010131332101020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 011030101010131332101020220 to 011030101010131332101020220
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030101010131332101020220 to 011030101010131332101020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 30 
+-I- going from 011030101010131332101020220 to 011030101010131332103020220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- going from 011030101010131332103020220 to 011030101010131332103020220
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011030101010131332103020220 to 011030101010131332103010220
+-I- 30 
+-I- validation failed skipping
+-I- 18 
+-I- validation failed skipping
+-I- going from 011030101010131332103010220 to 011030101030131332103010220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- going from 011030101030131332103010220 to 010030101030131332103010220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 010030101030131332103010220 to 010030102030131332103010220
+-I- validation failed skipping
+-I- 16 
+-I- 16 
+-I- 24 
+-I- going from 010030102030131332103010220 to 010030102030131332103010220
+-I- validation failed skipping
+-I- 16 
+-I- 24 
+-I- going from 010030102030131332103010220 to 010030102030131332103010230
+-I- 36 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010030102030131332103010230 to 010030102030131332103011230
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 010030102030131332103011230 to 010030102030131332103011230
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- 24 
+-I- going from 010030102030131332103011230 to 010030102030131332103011200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 010030102030131332103011200 to 010030102030131332103011200
+-I- 24 
+-I- validation failed skipping
+-I- 16 
+-I- 24 
+-I- going from 010030102030131332103011200 to 010030102030131332103013200
+-I- validation failed skipping
+-I- 30 
+-I- 24 
+-I- going from 010030102030131332103013200 to 010030102030131330103013200
+-I- 96 
+-I- validation failed skipping
+-I- 24 
+-I- 100 
+-I- going from 010030102030131330103013200 to 010030102030131330103013200
+-I- 24 
+-I- 60 
+-I- 48 
+-I- 14 
+-I- going from 010030102030131330103013200 to 010030102030031330103013200
+-I- 14 
+-I- 14 
+-I- validation failed skipping
+-I- 14 
+-I- going from 010030102030031330103013200 to 010030102030031330103013200
+-I- 100 
+-I- 40 
+-I- 14 
+-I- 90 
+-I- going from 010030102030031330103013200 to 010030102030001330103013200
+-I- 60 
+-I- validation failed skipping
+-I- 100 
+-I- 90 
+-I- going from 010030102030001330103013200 to 010030102031001330103013200
+-I- 54 
+-I- 60 
+-I- 72 
+-I- 72 
+-I- going from 010030102031001330103013200 to 010030102031001330103013100
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 54 
+-I- going from 010030102031001330103013100 to 010030102031001330103013100
+-I- 48 
+-I- validation failed skipping
+-I- 64 
+-I- going from 010030102031001330103013100 to 010030102031001330203013100
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 45 
+-I- 48 
+-I- going from 010030102031001330203013100 to 010330102031001330203013100
+-I- 45 
+-I- 45 
+-I- 45 
+-I- going from 010330102031001330203013100 to 020330102031001330203013100
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 45 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020330102031001330203013100 to 020330102031001330203013100
+-I- 45 
+-I- 45 
+-I- 45 
+-I- going from 020330102031001330203013100 to 020330102031001330201013100
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 45 
+-I- going from 020330102031001330201013100 to 020330102031001330201013100
+-I- 30 
+-I- 45 
+-I- 45 
+-I- going from 020330102031001330201013100 to 020330102031001330201013110
+-I- 100 
+-I- validation failed skipping
+-I- 30 
+-I- 96 
+-I- going from 020330102031001330201013110 to 020330102001001330201013110
+-I- 96 
+-I- 70 
+-I- 70 
+-I- going from 020330102001001330201013110 to 020330102001001030201013110
+-I- 70 
+-I- 70 
+-I- 120 
+-I- 90 
+-I- going from 020330102001001030201013110 to 020330102001001030201013110
+-I- 70 
+-I- 70 
+-I- 70 
+-I- going from 020330102001001030201013110 to 020330101001001030201013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 020330101001001030201013110 to 020030101001001030201013110
+-I- 126 
+-I- 42 
+-I- 42 
+-I- 126 
+-I- going from 020030101001001030201013110 to 020030101001001030201013110
+-I- 96 
+-I- validation failed skipping
+-I- 48 
+-I- 42 
+-I- going from 020030101001001030201013110 to 020030101001001030201013110
+-I- 126 
+-I- 42 
+-I- 42 
+-I- 126 
+-I- going from 020030101001001030201013110 to 020030101001001030201013110
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 020030101001001030201013110 to 020030201001001030201013110
+-I- 90 
+-I- validation failed skipping
+-I- 40 
+-I- 42 
+-I- going from 020030201001001030201013110 to 020030201001001030201013110
+-I- 112 
+-I- 84 
+-I- 63 
+-I- going from 020030201001001030201013110 to 020030201001001030201010110
+-I- 175 
+-I- 63 
+-I- 175 
+-I- 63 
+-I- going from 020030201001001030201010110 to 020030201001001030201010110
+-I- 80 
+-I- validation failed skipping
+-I- 120 
+-I- going from 020030201001001030201010110 to 020030201002001030201010110
+-I- 72 
+-I- 72 
+-I- 48 
+-I- going from 020030201002001030201010110 to 020030201002001030201013110
+-I- 28 
+-I- validation failed skipping
+-I- 56 
+-I- going from 020030201002001030201013110 to 020030201002001031201013110
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 020030201002001031201013110 to 020030201002001031202013110
+-I- 48 
+-I- 42 
+-I- 28 
+-I- 64 
+-I- going from 020030201002001031202013110 to 020030201002001031202013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 25 
+-I- 28 
+-I- going from 020030201002001031202013110 to 020030201002301031202013110
+-I- 60 
+-I- 25 
+-I- 90 
+-I- going from 020030201002301031202013110 to 020030201002301031202012110
+-I- 60 
+-I- 25 
+-I- 90 
+-I- going from 020030201002301031202012110 to 020030201002301031202012110
+-I- 25 
+-I- 25 
+-I- 25 
+-I- 25 
+-I- going from 020030201002301031202012110 to 020030201002301031201012110
+-I- 25 
+-I- 25 
+-I- 25 
+-I- 25 
+-I- going from 020030201002301031201012110 to 020030101002301031201012110
+-I- 25 
+-I- 25 
+-I- 25 
+-I- going from 020030101002301031201012110 to 010030101002301031201012110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 25 
+-I- going from 010030101002301031201012110 to 010030101002301031201012110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 25 
+-I- going from 010030101002301031201012110 to 010030101002301031001012110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 40 
+-I- going from 010030101002301031001012110 to 010330101002301031001012110
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 010330101002301031001012110 to 010330101002301031002012110
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 010330101002301031002012110 to 010330101002301031002012110
+-I- 108 
+-I- 40 
+-I- 40 
+-I- 120 
+-I- going from 010330101002301031002012110 to 010330101002301031002013110
+-I- 36 
+-I- 48 
+-I- 28 
+-I- going from 010330101002301031002013110 to 010330101000301031002013110
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 010330101000301031002013110 to 010330101000301031002013110
+-I- 28 
+-I- 20 
+-I- 28 
+-I- validation failed skipping
+-I- going from 010330101000301031002013110 to 010330101000302031002013110
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 010330101000302031002013110 to 010330101000302031001013110
+-I- 12 
+-I- validation failed skipping
+-I- 36 
+-I- 20 
+-I- going from 010330101000302031001013110 to 010330101000312031001013110
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 010330101000312031001013110 to 010330101000312031001023110
+-I- 20 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330101000312031001023110 to 010330101001312031001023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- 24 
+-I- going from 010330101001312031001023110 to 010330101001312031001023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 60 
+-I- validation failed skipping
+-I- 60 
+-I- going from 010330101001312031001023110 to 010330101001112031001023110
+-I- 60 
+-I- validation failed skipping
+-I- 100 
+-I- 90 
+-I- going from 010330101001112031001023110 to 010330101001112031001023110
+-I- validation failed skipping
+-I- 72 
+-I- 36 
+-I- 60 
+-I- going from 010330101001112031001023110 to 010330101001112031001023110
+-I- 60 
+-I- 60 
+-I- 60 
+-I- 60 
+-I- going from 010330101001112031001023110 to 010330101001112031001023110
+-I- 30 
+-I- 36 
+-I- 20 
+-I- going from 010330101001112031001023110 to 010330101301112031001023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 010330101301112031001023110 to 010330101301112031001023110
+-I- 20 
+-I- 48 
+-I- 24 
+-I- 48 
+-I- going from 010330101301112031001023110 to 010330101301112031001023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- going from 010330101301112031001023110 to 010330101300112031001023110
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 010330101300112031001023110 to 010330102300112031001023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- 36 
+-I- going from 010330102300112031001023110 to 010330102300112031001023110
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 010330102300112031001023110 to 010330102300112031001023120
+-I- validation failed skipping
+-I- 48 
+-I- 30 
+-I- going from 010330102300112031001023120 to 010330102300112031301023120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 010330102300112031301023120 to 010330102300012031301023120
+-I- 80 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330102300012031301023120 to 010330102300012011301023120
+-I- 96 
+-I- 80 
+-I- 72 
+-I- 120 
+-I- going from 010330102300012011301023120 to 010330102300013011301023120
+-I- 60 
+-I- 72 
+-I- 72 
+-I- 72 
+-I- going from 010330102300013011301023120 to 010330102300013011301023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 50 
+-I- going from 010330102300013011301023110 to 010330102300013311301023110
+-I- 50 
+-I- validation failed skipping
+-I- 30 
+-I- going from 010330102300013311301023110 to 010330102303013311301023110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- going from 010330102303013311301023110 to 010330102303013311301023110
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330102303013311301023110 to 010330102303013311301023110
+-I- 30 
+-I- 12 
+-I- validation failed skipping
+-I- 8 
+-I- going from 010330102303013311301023110 to 010330102303013310301023110
+-I- 36 
+-I- 16 
+-I- 27 
+-I- going from 010330102303013310301023110 to 010330102303013310301020110
+-I- 81 
+-I- validation failed skipping
+-I- 27 
+-I- 40 
+-I- going from 010330102303013310301020110 to 010330102303013310001020110
+-I- validation failed skipping
+-I- 20 
+-I- 105 
+-I- going from 010330102303013310001020110 to 010330102303013330001020110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 010330102303013330001020110 to 010330102303013330001020110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 010330102303013330001020110 to 010330102303013330001020110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- 20 
+-I- going from 010330102303013330001020110 to 010330102303013330001020110
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 010330102303013330001020110 to 010330102303013330001020110
+-I- 36 
+-I- validation failed skipping
+-I- 32 
+-I- 20 
+-I- going from 010330102303013330001020110 to 010330102303013330001020110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- going from 010330102303013330001020110 to 010330102303013333001020110
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330102303013333001020110 to 010330102303013333101020110
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330102303013333101020110 to 010330102303013333101020110
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330102303013333101020110 to 010330102303013333101020110
+-I- 63 
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 010330102303013333101020110 to 010330102303013333101020110
+-I- 63 
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 010330102303013333101020110 to 010330102303013333101020110
+-I- 63 
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 010330102303013333101020110 to 010330102303013333101020110
+-I- 42 
+-I- 42 
+-I- 48 
+-I- going from 010330102303013333101020110 to 010330102303013333101020120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 010330102303013333101020120 to 010330102303013333101020120
+-I- 84 
+-I- validation failed skipping
+-I- 90 
+-I- going from 010330102303013333101020120 to 010330102103013333101020120
+-I- 84 
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 010330102103013333101020120 to 010330102103013333101020120
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 010330102103013333101020120 to 020330102103013333101020120
+-I- 48 
+-I- validation failed skipping
+-I- 72 
+-I- going from 020330102103013333101020120 to 020330102103013333201020120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- 56 
+-I- going from 020330102103013333201020120 to 020330102103013333201020120
+-I- 84 
+-I- 48 
+-I- validation failed skipping
+-I- 72 
+-I- going from 020330102103013333201020120 to 020330102103013333001020120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 70 
+-I- going from 020330102103013333001020120 to 020330102303013333001020120
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 020330102303013333001020120 to 020330202303013333001020120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- going from 020330202303013333001020120 to 020330202303013333001020120
+-I- 24 
+-I- 28 
+-I- validation failed skipping
+-I- 32 
+-I- going from 020330202303013333001020120 to 020330202303013333001020120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 28 
+-I- going from 020330202303013333001020120 to 020300202303013333001020120
+-I- 28 
+-I- validation failed skipping
+-I- 48 
+-I- 28 
+-I- going from 020300202303013333001020120 to 020300202303013333001021120
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 020300202303013333001021120 to 020300102303013333001021120
+-I- 28 
+-I- 48 
+-I- 56 
+-I- 64 
+-I- going from 020300102303013333001021120 to 020300102303013333001021120
+-I- 60 
+-I- validation failed skipping
+-I- 42 
+-I- 28 
+-I- going from 020300102303013333001021120 to 020300102303013333001021120
+-I- 16 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 28 
+-I- going from 020300102303013333001021120 to 020300102303113333001021120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- 18 
+-I- going from 020300102303113333001021120 to 020300102303113333001021120
+-I- 16 
+-I- validation failed skipping
+-I- 12 
+-I- 16 
+-I- going from 020300102303113333001021120 to 020300102303113333001023120
+-I- 24 
+-I- validation failed skipping
+-I- 12 
+-I- 12 
+-I- going from 020300102303113333001023120 to 020300102303113330001023120
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 020300102303113330001023120 to 010300102303113330001023120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 28 
+-I- going from 010300102303113330001023120 to 010300102303103330001023120
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 010300102303103330001023120 to 010300102303103330001023120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- validation failed skipping
+-I- 28 
+-I- validation failed skipping
+-I- going from 010300102303103330001023120 to 010300102303103330001023120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 28 
+-I- going from 010300102303103330001023120 to 010300102303103330001023120
+-I- 14 
+-I- validation failed skipping
+-I- 28 
+-I- 14 
+-I- going from 010300102303103330001023120 to 010300102303103330001021120
+-I- 20 
+-I- validation failed skipping
+-I- 14 
+-I- validation failed skipping
+-I- going from 010300102303103330001021120 to 010300102303103330001021120
+-I- 28 
+-I- 14 
+-I- 14 
+-I- 28 
+-I- going from 010300102303103330001021120 to 010300102303103330001021120
+-I- 28 
+-I- 14 
+-I- 14 
+-I- 28 
+-I- going from 010300102303103330001021120 to 010300102303103330001021120
+-I- 28 
+-I- 14 
+-I- 24 
+-I- 21 
+-I- going from 010300102303103330001021120 to 010300102303103330001021100
+-I- 18 
+-I- 42 
+-I- 21 
+-I- going from 010300102303103330001021100 to 010300102303103330001021200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- 18 
+-I- 28 
+-I- going from 010300102303103330001021200 to 010300102303103330001021200
+-I- 8 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010300102303103330001021200 to 010300102303103330101021200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- going from 010300102303103330101021200 to 010300102303103330101021200
+-I- 8 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 010300102303103330101021200 to 010300102303103330101021200
+-I- 8 
+-I- 12 
+-I- 6 
+-I- 24 
+-I- going from 010300102303103330101021200 to 010300102303103330101023200
+-I- 18 
+-I- 6 
+-I- 18 
+-I- going from 010300102303103330101023200 to 010300102203103330101023200
+-I- 8 
+-I- 12 
+-I- 6 
+-I- 24 
+-I- going from 010300102203103330101023200 to 010300102203103330101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 010300102203103330101023200 to 010300102203100330101023200
+-I- 60 
+-I- 60 
+-I- 30 
+-I- going from 010300102203100330101023200 to 010300102233100330101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 90 
+-I- 30 
+-I- 30 
+-I- 90 
+-I- going from 010300102233100330101023200 to 010300102333100330101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 24 
+-I- going from 010300102333100330101023200 to 010300102333100300101023200
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 010300102333100300101023200 to 010300202333100300101023200
+-I- 24 
+-I- 24 
+-I- going from 010300202333100300101023200 to 010300302333100300101023200
+-I- 24 
+-I- 24 
+-I- going from 010300302333100300101023200 to 010300102333100300101023200
+-I- 64 
+-I- validation failed skipping
+-I- 24 
+-I- 18 
+-I- going from 010300102333100300101023200 to 010300102303100300101023200
+-I- 16 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 010300102303100300101023200 to 010300102303110300101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- going from 010300102303110300101023200 to 010300102303113300101023200
+-I- 90 
+-I- 16 
+-I- 96 
+-I- going from 010300102303113300101023200 to 010300102302113300101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 010300102302113300101023200 to 010330102302113300101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 010330102302113300101023200 to 010330202302113300101023200
+-I- 18 
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 010330202302113300101023200 to 010330201302113300101023200
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 010330201302113300101023200 to 010330201302113300101023200
+-I- 18 
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 010330201302113300101023200 to 010330201302113300101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- 18 
+-I- going from 010330201302113300101023200 to 010330201332113300101023200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- going from 010330201332113300101023200 to 010330201332113300101023200
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 010330201332113300101023200 to 010330201332113300101013200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- going from 010330201332113300101013200 to 010330201332113300101013200
+-I- 16 
+-I- 12 
+-I- 24 
+-I- 24 
+-I- going from 010330201332113300101013200 to 010330201332113300101013200
+-I- 12 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010330201332113300101013200 to 010330201332113300101013200
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 010330201332113300101013200 to 010330202332113300101013200
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 010330202332113300101013200 to 020330202332113300101013200
+-I- 18 
+-I- 16 
+-I- 32 
+-I- going from 020330202332113300101013200 to 020330202332113300101012200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 020330202332113300101012200 to 020330202332013300101012200
+-I- 42 
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 020330202332013300101012200 to 020330102332013300101012200
+-I- 16 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 020330102332013300101012200 to 020330102332113300101012200
+-I- 16 
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 020330102332113300101012200 to 020330102332113300101012200
+-I- 8 
+-I- 8 
+-I- validation failed skipping
+-I- 16 
+-I- going from 020330102332113300101012200 to 020330102332113300101012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- 12 
+-I- going from 020330102332113300101012210 to 020330102332113300101012210
+-I- 8 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020330102332113300101012210 to 020330102332113300101012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- validation failed skipping
+-I- going from 020330102332113300101012210 to 020330102332113300101012210
+-I- 8 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020330102332113300101012210 to 020330102332113300101012210
+-I- 8 
+-I- validation failed skipping
+-I- 16 
+-I- going from 020330102332113300101012210 to 020330102332113300101012220
+-I- 12 
+-I- 8 
+-I- 8 
+-I- 16 
+-I- going from 020330102332113300101012220 to 020330102332113300101013220
+-I- 8 
+-I- 8 
+-I- 8 
+-I- 8 
+-I- going from 020330102332113300101013220 to 020330102332113300101013220
+-I- 8 
+-I- 8 
+-I- 8 
+-I- 8 
+-I- going from 020330102332113300101013220 to 020330102332113300101013220
+-I- 16 
+-I- 8 
+-I- 24 
+-I- 16 
+-I- going from 020330102332113300101013220 to 020330102332113300101013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- 12 
+-I- going from 020330102332113300101013220 to 020330102332113300101013220
+-I- 12 
+-I- 8 
+-I- 8 
+-I- 16 
+-I- going from 020330102332113300101013220 to 020330102332113300101013220
+-I- 8 
+-I- 8 
+-I- 8 
+-I- going from 020330102332113300101013220 to 020330202332113300101013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 8 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 020330202332113300101013220 to 020330202332113300101013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 020330202332113300101013220 to 020330202332013300101013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 020330202332013300101013220 to 020330202332013300101013220
+-I- 28 
+-I- 36 
+-I- 28 
+-I- going from 020330202332013300101013220 to 020330202332013310101013220
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 020330202332013310101013220 to 020330201332013310101013220
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 020330201332013310101013220 to 020330201332013310101013220
+-I- 42 
+-I- 63 
+-I- 42 
+-I- going from 020330201332013310101013220 to 020330201332013310101013120
+-I- 63 
+-I- 42 
+-I- going from 020330201332013310101013120 to 020330201332013310101013020
+-I- 42 
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 020330201332013310101013020 to 020330201332013310101013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- 48 
+-I- 84 
+-I- going from 020330201332013310101013020 to 020330201333013310101013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330201333013310101013020 to 020330201333013310101013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330201333013310101013020 to 020330201333013310102013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020330201333013310102013020 to 020330201333013310102013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 60 
+-I- going from 020330201333013310102013020 to 020330201333313310102013020
+-I- validation failed skipping
+-I- 48 
+-I- 60 
+-I- validation failed skipping
+-I- going from 020330201333313310102013020 to 020330201233313310102013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330201233313310102013020 to 020330101233313310102013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- validation failed skipping
+-I- going from 020330101233313310102013020 to 020330101233313310102013020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- 50 
+-I- going from 020330101233313310102013020 to 020330101233313310102013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330101233313310102013020 to 010330101233313310102013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 010330101233313310102013020 to 010330101233313310102013020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 010330101233313310102013020 to 010330101233313310102013020
+-I- 48 
+-I- 24 
+-I- 56 
+-I- 48 
+-I- going from 010330101233313310102013020 to 010330101233313310102013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- going from 010330101233313310102013220 to 010330101233313010102013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- validation failed skipping
+-I- going from 010330101233313010102013220 to 010330101233313010102013220
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 010330101233313010102013220 to 020330101233313010102013220
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 020330101233313010102013220 to 020330101233313010101013220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 16 
+-I- going from 020330101233313010101013220 to 020330101233313010101013220
+-I- 16 
+-I- validation failed skipping
+-I- 32 
+-I- going from 020330101233313010101013220 to 020330101233313010101013210
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 020330101233313010101013210 to 020330201233313010101013210
+-I- 16 
+-I- 16 
+-I- 16 
+-I- going from 020330201233313010101013210 to 020330202233313010101013210
+-I- validation failed skipping
+-I- 27 
+-I- validation failed skipping
+-I- going from 020330202233313010101013210 to 020330202223313010101013210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- 45 
+-I- going from 020330202223313010101013210 to 020330202123313010101013210
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- going from 020330202123313010101013210 to 020330202123313010101012210
+-I- validation failed skipping
+-I- 20 
+-I- validation failed skipping
+-I- going from 020330202123313010101012210 to 020330202123313010301012210
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 020330202123313010301012210 to 020330202123313010302012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- 20 
+-I- validation failed skipping
+-I- going from 020330202123313010302012210 to 020330202123313010302012210
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 020330202123313010302012210 to 020330202123313010301012210
+-I- 20 
+-I- 20 
+-I- going from 020330202123313010301012210 to 020330202123313010303012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- 30 
+-I- going from 020330202123313010303012210 to 020330202123313010303012210
+-I- 20 
+-I- 20 
+-I- 75 
+-I- 30 
+-I- going from 020330202123313010303012210 to 020330202123313010303012110
+-I- validation failed skipping
+-I- 18 
+-I- validation failed skipping
+-I- going from 020330202123313010303012110 to 020330202123333010303012110
+-I- 18 
+-I- 18 
+-I- 63 
+-I- 24 
+-I- going from 020330202123333010303012110 to 020330202123333010303012110
+-I- 21 
+-I- 21 
+-I- validation failed skipping
+-I- going from 020330202123333010303012110 to 020330202123333010303012120
+-I- 21 
+-I- 21 
+-I- 21 
+-I- 21 
+-I- going from 020330202123333010303012120 to 020330202123333010303012120
+-I- 35 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 020330202123333010303012120 to 020330202123331010303012120
+-I- 35 
+-I- 35 
+-I- 35 
+-I- going from 020330202123331010303012120 to 020330202123331010301012120
+-I- 30 
+-I- 35 
+-I- validation failed skipping
+-I- going from 020330202123331010301012120 to 020330202123331010301012110
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 020330202123331010301012110 to 020330102123331010301012110
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 60 
+-I- going from 020330102123331010301012110 to 020330102123331010301012110
+-I- validation failed skipping
+-I- 60 
+-I- validation failed skipping
+-I- going from 020330102123331010301012110 to 020330102133331010301012110
+-I- 60 
+-I- 125 
+-I- 90 
+-I- going from 020330102133331010301012110 to 020330102133331010301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 60 
+-I- validation failed skipping
+-I- going from 020330102133331010301012210 to 020330102133331010301012210
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020330102133331010301012210 to 020330102033331010301012210
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330102033331010301012210 to 020330102033331010302012210
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 020330102033331010302012210 to 020330102033331010301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020330102033331010301012210 to 020330102033331010301012210
+-I- 48 
+-I- validation failed skipping
+-I- 48 
+-I- validation failed skipping
+-I- going from 020330102033331010301012210 to 020330102033331010301012210
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020330102033331010301012210 to 020330102033331010301012210
+-I- validation failed skipping
+-I- 48 
+-I- 48 
+-I- validation failed skipping
+-I- going from 020330102033331010301012210 to 020330102033331010301012210
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020330102033331010301012210 to 020330102033331010301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- going from 020330102033331010301012210 to 020330102033330010301012210
+-I- 72 
+-I- 72 
+-I- 72 
+-I- 72 
+-I- going from 020330102033330010301012210 to 020330102033330010301012210
+-I- 72 
+-I- 72 
+-I- 72 
+-I- 72 
+-I- going from 020330102033330010301012210 to 020330102033330010301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 54 
+-I- going from 020330102033330010301012210 to 020300102033330010301012210
+-I- 18 
+-I- validation failed skipping
+-I- 54 
+-I- 75 
+-I- going from 020300102033330010301012210 to 020300102033310010301012210
+-I- 54 
+-I- validation failed skipping
+-I- 18 
+-I- 42 
+-I- going from 020300102033310010301012210 to 020000102033310010301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- going from 020000102033310010301012210 to 020000102033310310301012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 020000102033310310301012210 to 020000102033310310001012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 105 
+-I- going from 020000102033310310001012210 to 020000102033310310001012210
+-I- 27 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 020000102033310310001012210 to 020000102033310310001012210
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 020000102033310310001012210 to 020000102033310310001022210
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 020000102033310310001022210 to 020000101033310310001022210
+-I- validation failed skipping
+-I- 24 
+-I- 60 
+-I- 36 
+-I- going from 020000101033310310001022210 to 020000101033310310001022210
+-I- 24 
+-I- validation failed skipping
+-I- 36 
+-I- validation failed skipping
+-I- going from 020000101033310310001022210 to 020000101033310310001022210
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 020000101033310310001022210 to 020000101033310310001012210
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 020000101033310310001012210 to 010000101033310310001012210
+-I- validation failed skipping
+-I- 36 
+-I- 40 
+-I- 24 
+-I- going from 010000101033310310001012210 to 010000101033310310001012210
+-I- 40 
+-I- validation failed skipping
+-I- 24 
+-I- 24 
+-I- going from 010000101033310310001012210 to 010000101030310310001012210
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 56 
+-I- going from 010000101030310310001012210 to 010000101030310010001012210
+-I- 56 
+-I- 72 
+-I- 112 
+-I- 120 
+-I- going from 010000101030310010001012210 to 010000101030310010001012210
+-I- 84 
+-I- 56 
+-I- 84 
+-I- going from 010000101030310010001012210 to 010000101020310010001012210
+-I- 48 
+-I- validation failed skipping
+-I- 36 
+-I- 56 
+-I- going from 010000101020310010001012210 to 010300101020310010001012210
+-I- 120 
+-I- validation failed skipping
+-I- 112 
+-I- going from 010300101020310010001012210 to 010300101020010010001012210
+-I- 112 
+-I- validation failed skipping
+-I- 140 
+-I- going from 010300101020010010001012210 to 010300101020010010001012220
+-I- 112 
+-I- 112 
+-I- 112 
+-I- 112 
+-I- going from 010300101020010010001012220 to 010300101020010010001012220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 108 
+-I- 56 
+-I- 72 
+-I- 112 
+-I- going from 010300101020010010001012220 to 010300101020010013001012220
+-I- 72 
+-I- 48 
+-I- 48 
+-I- 72 
+-I- going from 010300101020010013001012220 to 010300101320010013001012220
+-I- 36 
+-I- 24 
+-I- 12 
+-I- 48 
+-I- going from 010300101320010013001012220 to 010300101320013013001012220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- going from 010300101320013013001012220 to 010300101320013013001012220
+-I- 28 
+-I- 42 
+-I- 14 
+-I- going from 010300101320013013001012220 to 010300101320013013001012020
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 010300101320013013001012020 to 010300101320013013002012020
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 010300101320013013002012020 to 010300102320013013002012020
+-I- 18 
+-I- 14 
+-I- 54 
+-I- 42 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 14 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 14 
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- 42 
+-I- 32 
+-I- 14 
+-I- 64 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 14 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- 14 
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 010300102320013013002012020 to 010300102320013013002012020
+-I- 42 
+-I- 32 
+-I- 64 
+-I- going from 010300102320013013002012020 to 010300102320012013002012020
+-I- 64 
+-I- 32 
+-I- 32 
+-I- 64 
+-I- going from 010300102320012013002012020 to 010300102320012013002012020
+-I- 36 
+-I- 24 
+-I- 30 
+-I- going from 010300102320012013002012020 to 010300102320012003002012020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 010300102320012003002012020 to 010330102320012003002012020
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 010330102320012003002012020 to 010330101320012003002012020
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 010330101320012003002012020 to 010330101320012003002012020
+-I- 20 
+-I- 60 
+-I- 60 
+-I- going from 010330101320012003002012020 to 010330101310012003002012020
+-I- 20 
+-I- 60 
+-I- 60 
+-I- going from 010330101310012003002012020 to 010330101310012003002012020
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 010330101310012003002012020 to 010330101310012003002022020
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 010330101310012003002022020 to 010330201310012003002022020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 010330201310012003002022020 to 010330201313012003002022020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 010330201313012003002022020 to 010300201313012003002022020
+-I- validation failed skipping
+-I- 30 
+-I- 30 
+-I- validation failed skipping
+-I- going from 010300201313012003002022020 to 010300201213012003002022020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- 30 
+-I- going from 010300201213012003002022020 to 010300201213012003302022020
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 010300201213012003302022020 to 010300202213012003302022020
+-I- 54 
+-I- validation failed skipping
+-I- 18 
+-I- 42 
+-I- going from 010300202213012003302022020 to 010000202213012003302022020
+-I- 42 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 010000202213012003302022020 to 011000202213012003302022020
+-I- 72 
+-I- 24 
+-I- 70 
+-I- going from 011000202213012003302022020 to 011000202213012003302020020
+-I- validation failed skipping
+-I- 64 
+-I- validation failed skipping
+-I- going from 011000202213012003302020020 to 011000202313012003302020020
+-I- 64 
+-I- 64 
+-I- 64 
+-I- going from 011000202313012003302020020 to 011000202313012003301020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 54 
+-I- going from 011000202313012003301020020 to 011000202313012003001020020
+-I- 140 
+-I- 84 
+-I- 108 
+-I- going from 011000202313012003001020020 to 011000202313010003001020020
+-I- 144 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 108 
+-I- going from 011000202313010003001020020 to 011000202313010003001020020
+-I- 140 
+-I- 72 
+-I- 100 
+-I- going from 011000202313010003001020020 to 011000202313010303001020020
+-I- 84 
+-I- validation failed skipping
+-I- 70 
+-I- going from 011000202313010303001020020 to 011000202313010333001020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011000202313010333001020020 to 011000202313010333301020020
+-I- 84 
+-I- 42 
+-I- validation failed skipping
+-I- 84 
+-I- going from 011000202313010333301020020 to 011000202313020333301020020
+-I- 36 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 011000202313020333301020020 to 011000202313021333301020020
+-I- validation failed skipping
+-I- 40 
+-I- validation failed skipping
+-I- going from 011000202313021333301020020 to 011000202333021333301020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- 20 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011000202333021333301020020 to 011200202333021333301020020
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 011200202333021333301020020 to 011200201333021333301020020
+-I- 40 
+-I- validation failed skipping
+-I- 32 
+-I- going from 011200201333021333301020020 to 011200201333021333001020020
+-I- 60 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200201333021333001020020 to 011200201333001333001020020
+-I- 64 
+-I- 60 
+-I- 90 
+-I- going from 011200201333001333001020020 to 011200201233001333001020020
+-I- 42 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200201233001333001020020 to 011200201233001313001020020
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 011200201233001313001020020 to 011200201233001313002020020
+-I- 96 
+-I- 42 
+-I- 48 
+-I- 100 
+-I- going from 011200201233001313002020020 to 011200201333001313002020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 011200201333001313002020020 to 011230201333001313002020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- 42 
+-I- going from 011230201333001313002020020 to 011230201333001313002020020
+-I- 100 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011230201333001313002020020 to 011230201333001013002020020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 40 
+-I- 42 
+-I- going from 011230201333001013002020020 to 011230201333001013002020020
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011230201333001013002020020 to 011230201333001013001020020
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011230201333001013001020020 to 011230201333001013001020020
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011230201333001013001020020 to 011230201333001013001010020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 90 
+-I- 40 
+-I- going from 011230201333001013001010020 to 011230201333001013001010020
+-I- 90 
+-I- validation failed skipping
+-I- 40 
+-I- validation failed skipping
+-I- going from 011230201333001013001010020 to 011230201333001013001010020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 42 
+-I- going from 011230201333001013001010020 to 011200201333001013001010020
+-I- 126 
+-I- 84 
+-I- 126 
+-I- going from 011200201333001013001010020 to 011200201332001013001010020
+-I- 96 
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200201332001013001010020 to 011200201332001313001010020
+-I- 48 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200201332001313001010020 to 011200201332001313001010020
+-I- 48 
+-I- validation failed skipping
+-I- 48 
+-I- validation failed skipping
+-I- going from 011200201332001313001010020 to 011200201332001313001010020
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 011200201332001313001010020 to 011200101332001313001010020
+-I- 24 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200101332001313001010020 to 011200101312001313001010020
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011200101312001313001010020 to 011200101312001313001010020
+-I- 24 
+-I- validation failed skipping
+-I- 32 
+-I- validation failed skipping
+-I- going from 011200101312001313001010020 to 011200101312001313001010020
+-I- 42 
+-I- 24 
+-I- validation failed skipping
+-I- 32 
+-I- going from 011200101312001313001010020 to 011000101312001313001010020
+-I- validation failed skipping
+-I- 96 
+-I- 64 
+-I- going from 011000101312001313001010020 to 011000101310001313001010020
+-I- 64 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011000101310001313001010020 to 011000101310001313001010020
+-I- 45 
+-I- 0 
+-I- 27 
+-I- going from 011000101310001313001010020 to 011000101310001313001013020
+-I- validation failed skipping
+-I- 18 
+-I- 30 
+-I- going from 011000101310001313001013020 to 011000101310001312001013020
+-I- 90 
+-I- validation failed skipping
+-I- 18 
+-I- 72 
+-I- going from 011000101310001312001013020 to 011000101310001012001013020
+-I- 84 
+-I- 54 
+-I- validation failed skipping
+-I- going from 011000101310001012001013020 to 011200101310001012001013020
+-I- 54 
+-I- 48 
+-I- 90 
+-I- 72 
+-I- going from 011200101310001012001013020 to 011200101320001012001013020
+-I- 64 
+-I- validation failed skipping
+-I- 16 
+-I- going from 011200101320001012001013020 to 011200101320001312001013020
+-I- 36 
+-I- 16 
+-I- validation failed skipping
+-I- 32 
+-I- going from 011200101320001312001013020 to 011000101320001312001013020
+-I- 48 
+-I- 20 
+-I- 32 
+-I- 30 
+-I- going from 011000101320001312001013020 to 011000101320001312001010020
+-I- 30 
+-I- 20 
+-I- validation failed skipping
+-I- going from 011000101320001312001010020 to 011000101320001312201010020
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011000101320001312201010020 to 011010101320001312201010020
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011010101320001312201010020 to 011010101320001312202010020
+-I- 30 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 011010101320001312202010020 to 011010101320011312202010020
+-I- 36 
+-I- 30 
+-I- 18 
+-I- 40 
+-I- going from 011010101320011312202010020 to 011010101320011312202010030
+-I- 40 
+-I- validation failed skipping
+-I- 90 
+-I- going from 011010101320011312202010030 to 011010101320011112202010030
+-I- validation failed skipping
+-I- 126 
+-I- 120 
+-I- going from 011010101320011112202010030 to 011010101320011112002010030
+-I- 120 
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011010101320011112002010030 to 011010101320011112002010030
+-I- 120 
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011010101320011112002010030 to 011010101320011112002010030
+-I- 120 
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011010101320011112002010030 to 011010101320011112002010030
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011010101320011112002010030 to 011010101320011112001010030
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011010101320011112001010030 to 011010101320011112001020030
+-I- 108 
+-I- 180 
+-I- 200 
+-I- going from 011010101320011112001020030 to 011010101310011112001020030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 96 
+-I- going from 011010101310011112001020030 to 011000101310011112001020030
+-I- 96 
+-I- 96 
+-I- 96 
+-I- 96 
+-I- going from 011000101310011112001020030 to 011000101310011112001020030
+-I- 144 
+-I- 126 
+-I- 96 
+-I- 147 
+-I- going from 011000101310011112001020030 to 011000101310011112001020030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 96 
+-I- going from 011000101310011112001020030 to 011000101310011112001020030
+-I- 96 
+-I- 108 
+-I- 84 
+-I- 96 
+-I- going from 011000101310011112001020030 to 011000101310011112001020330
+-I- 84 
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 011000101310011112001020330 to 011000101310011112001010330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011000101310011112001010330 to 011000101310011112001010330
+-I- 84 
+-I- 84 
+-I- 84 
+-I- 84 
+-I- going from 011000101310011112001010330 to 011000101310011112001010330
+-I- 96 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 84 
+-I- going from 011000101310011112001010330 to 011000101310011112001010330
+-I- 144 
+-I- 84 
+-I- 48 
+-I- 112 
+-I- going from 011000101310011112001010330 to 011000101310011110001010330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 288 
+-I- validation failed skipping
+-I- 343 
+-I- going from 011000101310011110001010330 to 011000101110011110001010330
+-I- 315 
+-I- 216 
+-I- validation failed skipping
+-I- going from 011000101110011110001010330 to 011200101110011110001010330
+-I- 160 
+-I- 168 
+-I- 240 
+-I- going from 011200101110011110001010330 to 011200101110011120001010330
+-I- 160 
+-I- 160 
+-I- 160 
+-I- going from 011200101110011120001010330 to 011200101110011120001020330
+-I- 135 
+-I- 96 
+-I- 90 
+-I- 160 
+-I- going from 011200101110011120001020330 to 011200101110011120301020330
+-I- 42 
+-I- validation failed skipping
+-I- 126 
+-I- going from 011200101110011120301020330 to 011200101120011120301020330
+-I- 81 
+-I- 54 
+-I- 84 
+-I- going from 011200101120011120301020330 to 011200101120011130301020330
+-I- 60 
+-I- 42 
+-I- 84 
+-I- going from 011200101120011130301020330 to 011200101320011130301020330
+-I- 42 
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 011200101320011130301020330 to 011200101320011130301020330
+-I- 42 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- going from 011200101320011130301020330 to 011200101320001130301020330
+-I- 60 
+-I- 60 
+-I- 80 
+-I- going from 011200101320001130301020330 to 011200101320001110301020330
+-I- 56 
+-I- 80 
+-I- 80 
+-I- going from 011200101320001110301020330 to 011200101320001111301020330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- going from 011200101320001111301020330 to 011230101320001111301020330
+-I- 60 
+-I- validation failed skipping
+-I- 96 
+-I- going from 011230101320001111301020330 to 011230101320001111301020310
+-I- 60 
+-I- validation failed skipping
+-I- 72 
+-I- 96 
+-I- going from 011230101320001111301020310 to 011230101320001111301020310
+-I- 25 
+-I- 20 
+-I- validation failed skipping
+-I- going from 011230101320001111301020310 to 011230101322001111301020310
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 011230101322001111301020310 to 011230101322001111301020310
+-I- 24 
+-I- 36 
+-I- 30 
+-I- going from 011230101322001111301020310 to 011230101312001111301020310
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- going from 011230101312001111301020310 to 011200101312001111301020310
+-I- 36 
+-I- 30 
+-I- 36 
+-I- 20 
+-I- going from 011200101312001111301020310 to 011200101312001110301020310
+-I- 24 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200101312001110301020310 to 011200101312011110301020310
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011200101312011110301020310 to 011200102312011110301020310
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011200102312011110301020310 to 011200202312011110301020310
+-I- validation failed skipping
+-I- 24 
+-I- 20 
+-I- going from 011200202312011110301020310 to 011200202312011100301020310
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 011200202312011100301020310 to 011200202312011100301020310
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 011200202312011100301020310 to 021200202312011100301020310
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 32 
+-I- going from 021200202312011100301020310 to 021200202312010100301020310
+-I- 32 
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 021200202312010100301020310 to 021200202312010100301010310
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 021200202312010100301010310 to 021200202312010100301020310
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 021200202312010100301020310 to 021200102312010100301020310
+-I- 48 
+-I- 24 
+-I- 48 
+-I- going from 021200102312010100301020310 to 021200102312010100201020310
+-I- validation failed skipping
+-I- 28 
+-I- 42 
+-I- going from 021200102312010100201020310 to 021200102312010100201020330
+-I- 28 
+-I- validation failed skipping
+-I- 28 
+-I- 0 
+-I- going from 021200102312010100201020330 to 021200102312010000201020330
+-I- validation failed skipping
+-I- 56 
+-I- 0 
+-I- going from 021200102312010000201020330 to 021200102310010000201020330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 0 
+-I- going from 021200102310010000201020330 to 021200102310010000201020330
+-I- 72 
+-I- 0 
+-I- validation failed skipping
+-I- going from 021200102310010000201020330 to 021200102310010002201020330
+-I- 24 
+-I- 56 
+-I- 72 
+-I- going from 021200102310010002201020330 to 021200102320010002201020330
+-I- 21 
+-I- validation failed skipping
+-I- 14 
+-I- going from 021200102320010002201020330 to 021200102320010302201020330
+-I- 14 
+-I- 14 
+-I- 14 
+-I- going from 021200102320010302201020330 to 021200102320010302201010330
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- validation failed skipping
+-I- 14 
+-I- 14 
+-I- going from 021200102320010302201010330 to 021200102320010302201010310
+-I- 12 
+-I- 12 
+-I- 12 
+-I- going from 021200102320010302201010310 to 011200102320010302201010310
+-I- 20 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200102320010302201010310 to 011200102320110302201010310
+-I- 48 
+-I- validation failed skipping
+-I- 20 
+-I- 28 
+-I- going from 011200102320110302201010310 to 011200102320110302201010010
+-I- 28 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- going from 011200102320110302201010010 to 011200102320010302201010010
+-I- 20 
+-I- 36 
+-I- 16 
+-I- 48 
+-I- going from 011200102320010302201010010 to 011200102320010302201010010
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- going from 011200102320010302201010010 to 011200102320010302201010010
+-I- validation failed skipping
+-I- 63 
+-I- 32 
+-I- going from 011200102320010302201010010 to 011200102320010302001010010
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 011200102320010302001010010 to 011200102320010302001020010
+-I- 32 
+-I- 28 
+-I- 24 
+-I- 56 
+-I- going from 011200102320010302001020010 to 011200102320010302001020030
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011200102320010302001020030 to 011200102320010302001010030
+-I- 42 
+-I- 16 
+-I- 36 
+-I- going from 011200102320010302001010030 to 011200102320010302001013030
+-I- validation failed skipping
+-I- 36 
+-I- 72 
+-I- 60 
+-I- going from 011200102320010302001013030 to 011200102320010302001013030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 45 
+-I- 36 
+-I- going from 011200102320010302001013030 to 011200102320010302001013030
+-I- 24 
+-I- validation failed skipping
+-I- 24 
+-I- going from 011200102320010302001013030 to 011200102320010302001013130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 011200102320010302001013130 to 011200102320010302001013130
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 011200102320010302001013130 to 011200102320000302001013130
+-I- 60 
+-I- 32 
+-I- 64 
+-I- going from 011200102320000302001013130 to 011200102320000202001013130
+-I- 24 
+-I- 32 
+-I- 32 
+-I- 32 
+-I- going from 011200102320000202001013130 to 011200102320000202001013110
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011200102320000202001013110 to 021200102320000202001013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 16 
+-I- going from 021200102320000202001013110 to 021230102320000202001013110
+-I- 48 
+-I- 16 
+-I- 16 
+-I- 48 
+-I- going from 021230102320000202001013110 to 021230102320000202001013110
+-I- 24 
+-I- 36 
+-I- 24 
+-I- going from 021230102320000202001013110 to 021230102310000202001013110
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 021230102310000202001013110 to 011230102310000202001013110
+-I- 60 
+-I- validation failed skipping
+-I- 24 
+-I- 60 
+-I- going from 011230102310000202001013110 to 011230102310000202001013110
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011230102310000202001013110 to 011230102310000202002013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 011230102310000202002013110 to 011200102310000202002013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 12 
+-I- going from 011200102310000202002013110 to 011200102310000232002013110
+-I- 18 
+-I- 18 
+-I- 18 
+-I- going from 011200102310000232002013110 to 011200102310000232002013120
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 30 
+-I- 18 
+-I- going from 011200102310000232002013120 to 011200102310000232002013120
+-I- 30 
+-I- 54 
+-I- 60 
+-I- going from 011200102310000232002013120 to 011200102320000232002013120
+-I- 30 
+-I- 30 
+-I- 30 
+-I- 30 
+-I- going from 011200102320000232002013120 to 011200102320000232002013120
+-I- 50 
+-I- validation failed skipping
+-I- 54 
+-I- going from 011200102320000232002013120 to 011200102120000232002013120
+-I- 50 
+-I- 50 
+-I- 50 
+-I- going from 011200102120000232002013120 to 011200202120000232002013120
+-I- 42 
+-I- 30 
+-I- validation failed skipping
+-I- going from 011200202120000232002013120 to 011200202120200232002013120
+-I- 30 
+-I- 30 
+-I- 45 
+-I- 30 
+-I- going from 011200202120200232002013120 to 011200202120200232002013120
+-I- validation failed skipping
+-I- 30 
+-I- 48 
+-I- going from 011200202120200232002013120 to 011200202120200232202013120
+-I- 30 
+-I- 30 
+-I- 15 
+-I- 30 
+-I- going from 011200202120200232202013120 to 011200202120200232202013320
+-I- validation failed skipping
+-I- 20 
+-I- validation failed skipping
+-I- going from 011200202120200232202013320 to 011200202120200332202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 011200202120200332202013320 to 011200202120200332202013320
+-I- 36 
+-I- 20 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011200202120200332202013320 to 011200202120200332202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 20 
+-I- going from 011200202120200332202013320 to 011200202120200332202013320
+-I- 36 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011200202120200332202013320 to 011200202120200331202013320
+-I- 36 
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011200202120200331202013320 to 011200202120200331202013320
+-I- 24 
+-I- validation failed skipping
+-I- 36 
+-I- validation failed skipping
+-I- going from 011200202120200331202013320 to 011200202120200311202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 40 
+-I- going from 011200202120200311202013320 to 011200202120203311202013320
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011200202120203311202013320 to 011200201120203311202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 40 
+-I- going from 011200201120203311202013320 to 011230201120203311202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- 40 
+-I- going from 011230201120203311202013320 to 011230201120203311202013320
+-I- 72 
+-I- 40 
+-I- 36 
+-I- 80 
+-I- going from 011230201120203311202013320 to 011230201130203311202013320
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011230201130203311202013320 to 011230101130203311202013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- 28 
+-I- going from 011230101130203311202013320 to 011230101130203011202013320
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 011230101130203011202013320 to 011230101130203011201013320
+-I- 28 
+-I- 28 
+-I- 28 
+-I- 28 
+-I- going from 011230101130203011201013320 to 011230101130203011201013320
+-I- 40 
+-I- validation failed skipping
+-I- 28 
+-I- 28 
+-I- going from 011230101130203011201013320 to 011230101130203011201013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 011230101130203011201013320 to 011230101130203001201013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 50 
+-I- going from 011230101130203001201013320 to 011200101130203001201013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 50 
+-I- 50 
+-I- 50 
+-I- 50 
+-I- going from 011200101130203001201013320 to 011200101130203001201013320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 21 
+-I- going from 011200101130203001201013320 to 011200101130203000201013320
+-I- 21 
+-I- 21 
+-I- 21 
+-I- going from 011200101130203000201013320 to 011200101130203000202013320
+-I- 48 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200101130203000202013320 to 011200101130203000202011320
+-I- 72 
+-I- 50 
+-I- 48 
+-I- 100 
+-I- going from 011200101130203000202011320 to 011200101130203000202011320
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 011200101130203000202011320 to 011200101130203000202011320
+-I- 48 
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 011200101130203000202011320 to 011200101130203000202011320
+-I- 72 
+-I- 48 
+-I- 60 
+-I- 48 
+-I- going from 011200101130203000202011320 to 011200101130203000002011320
+-I- 48 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011200101130203000002011320 to 011200101130203000002011320
+-I- 96 
+-I- 75 
+-I- 48 
+-I- 125 
+-I- going from 011200101130203000002011320 to 011200101130203000002011320
+-I- 32 
+-I- 48 
+-I- 48 
+-I- 54 
+-I- going from 011200101130203000002011320 to 011200101130203000002011310
+-I- 60 
+-I- 24 
+-I- validation failed skipping
+-I- 32 
+-I- going from 011200101130203000002011310 to 011200101130203000002011310
+-I- 64 
+-I- validation failed skipping
+-I- 32 
+-I- 64 
+-I- going from 011200101130203000002011310 to 011200101130203000002011310
+-I- 60 
+-I- 48 
+-I- 54 
+-I- going from 011200101130203000002011310 to 011200101030203000002011310
+-I- 54 
+-I- 54 
+-I- 54 
+-I- 54 
+-I- going from 011200101030203000002011310 to 011200101030203000002011310
+-I- 54 
+-I- 54 
+-I- 54 
+-I- going from 011200101030203000002011310 to 011200101030203000002021310
+-I- 84 
+-I- validation failed skipping
+-I- 90 
+-I- going from 011200101030203000002021310 to 011100101030203000002021310
+-I- 90 
+-I- 56 
+-I- 60 
+-I- 84 
+-I- going from 011100101030203000002021310 to 011100101030203000002021310
+-I- 60 
+-I- 42 
+-I- 100 
+-I- 84 
+-I- going from 011100101030203000002021310 to 011100101030203200002021310
+-I- 42 
+-I- 42 
+-I- 42 
+-I- going from 011100101030203200002021310 to 011100102030203200002021310
+-I- 60 
+-I- 100 
+-I- 84 
+-I- going from 011100102030203200002021310 to 011100102030203100002021310
+-I- 60 
+-I- 72 
+-I- 72 
+-I- 90 
+-I- going from 011100102030203100002021310 to 011100102030203100002021310
+-I- 60 
+-I- 84 
+-I- 90 
+-I- 60 
+-I- going from 011100102030203100002021310 to 011100102030203100002021310
+-I- 120 
+-I- validation failed skipping
+-I- 60 
+-I- 105 
+-I- going from 011100102030203100002021310 to 011100102030203100002021010
+-I- 75 
+-I- 63 
+-I- 125 
+-I- going from 011100102030203100002021010 to 011100102030203100002023010
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 011100102030203100002023010 to 021100102030203100002023010
+-I- 105 
+-I- 75 
+-I- 125 
+-I- going from 021100102030203100002023010 to 021100102030203100002022010
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- going from 021100102030203100002022010 to 020100102030203100002022010
+-I- 72 
+-I- 72 
+-I- 72 
+-I- 72 
+-I- going from 020100102030203100002022010 to 020100102030203100001022010
+-I- 180 
+-I- validation failed skipping
+-I- 135 
+-I- going from 020100102030203100001022010 to 020100102030200100001022010
+-I- 135 
+-I- 135 
+-I- 135 
+-I- going from 020100102030200100001022010 to 020100102030200100002022010
+-I- validation failed skipping
+-I- 81 
+-I- 180 
+-I- 135 
+-I- going from 020100102030200100002022010 to 020100102030220100002022010
+-I- 81 
+-I- 81 
+-I- 81 
+-I- 81 
+-I- going from 020100102030220100002022010 to 020100101030220100002022010
+-I- 81 
+-I- 72 
+-I- 81 
+-I- 96 
+-I- going from 020100101030220100002022010 to 020100101030220100002022020
+-I- 72 
+-I- 81 
+-I- 96 
+-I- going from 020100101030220100002022020 to 020100101030220100002022020
+-I- 72 
+-I- 72 
+-I- 72 
+-I- 72 
+-I- going from 020100101030220100002022020 to 020100101030220100001022020
+-I- 70 
+-I- 54 
+-I- validation failed skipping
+-I- 72 
+-I- going from 020100101030220100001022020 to 020120101030220100001022020
+-I- validation failed skipping
+-I- 48 
+-I- 90 
+-I- going from 020120101030220100001022020 to 020120101030320100001022020
+-I- 42 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 020120101030320100001022020 to 021120101030320100001022020
+-I- 48 
+-I- 21 
+-I- 48 
+-I- going from 021120101030320100001022020 to 021120101030320300001022020
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- validation failed skipping
+-I- 21 
+-I- going from 021120101030320300001022020 to 021120101030320300001022220
+-I- validation failed skipping
+-I- 40 
+-I- 18 
+-I- 60 
+-I- going from 021120101030320300001022220 to 021120101030320300001022220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 021120101030320300001022220 to 021120101030320300001022200
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 021120101030320300001022200 to 021120102030320300001022200
+-I- validation failed skipping
+-I- 18 
+-I- validation failed skipping
+-I- 24 
+-I- going from 021120102030320300001022200 to 021120102030320300001022220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 021120102030320300001022220 to 021120102030320300001022220
+-I- 48 
+-I- 18 
+-I- 36 
+-I- 36 
+-I- going from 021120102030320300001022220 to 021120102030320300001020220
+-I- 72 
+-I- 36 
+-I- 36 
+-I- 72 
+-I- going from 021120102030320300001020220 to 021130102030320300001020220
+-I- 28 
+-I- 24 
+-I- validation failed skipping
+-I- going from 021130102030320300001020220 to 021130102030320302001020220
+-I- 28 
+-I- 24 
+-I- validation failed skipping
+-I- 36 
+-I- going from 021130102030320302001020220 to 021130102030320302001020220
+-I- 24 
+-I- 24 
+-I- validation failed skipping
+-I- 48 
+-I- going from 021130102030320302001020220 to 021130102030310302001020220
+-I- 24 
+-I- validation failed skipping
+-I- 20 
+-I- going from 021130102030310302001020220 to 021130102030313302001020220
+-I- 20 
+-I- 20 
+-I- 20 
+-I- 20 
+-I- going from 021130102030313302001020220 to 021130102030313302001020220
+-I- 40 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 021130102030313302001020220 to 021130102010313302001020220
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 021130102010313302001020220 to 011130102010313302001020220
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011130102010313302001020220 to 011130102010313302001010220
+-I- 40 
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011130102010313302001010220 to 011130101010313302001010220
+-I- 72 
+-I- 54 
+-I- 80 
+-I- going from 011130101010313302001010220 to 011130101010313303001010220
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 45 
+-I- validation failed skipping
+-I- 45 
+-I- going from 011130101010313303001010220 to 011130101010313313001010220
+-I- validation failed skipping
+-I- 40 
+-I- 72 
+-I- going from 011130101010313313001010220 to 011130101010313213001010220
+-I- validation failed skipping
+-I- 40 
+-I- 48 
+-I- going from 011130101010313213001010220 to 011130101010313213001010230
+-I- 40 
+-I- 40 
+-I- 40 
+-I- going from 011130101010313213001010230 to 011130101010313213002010230
+-I- 36 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011130101010313213002010230 to 011130101011313213002010230
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 36 
+-I- 36 
+-I- 36 
+-I- going from 011130101011313213002010230 to 011130102011313213002010230
+-I- 80 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102011313213002010230 to 011130102011113213002010230
+-I- 80 
+-I- 80 
+-I- 80 
+-I- 80 
+-I- going from 011130102011113213002010230 to 011130102011113213002010230
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 56 
+-I- going from 011130102011113213002010230 to 011130102010113213002010230
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 56 
+-I- going from 011130102010113213002010230 to 011130102000113213002010230
+-I- 56 
+-I- 56 
+-I- 56 
+-I- 56 
+-I- going from 011130102000113213002010230 to 011130102000113213002010230
+-I- 84 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 56 
+-I- going from 011130102000113213002010230 to 011130102000113213002010230
+-I- 56 
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102000113213002010230 to 011130102000113213002010230
+-I- validation failed skipping
+-I- 21 
+-I- 56 
+-I- 63 
+-I- going from 011130102000113213002010230 to 011130102000113212002010230
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 54 
+-I- 21 
+-I- 24 
+-I- 30 
+-I- going from 011130102000113212002010230 to 011130102000113212002010030
+-I- 54 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102000113212002010030 to 011130102010113212002010030
+-I- 60 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 54 
+-I- going from 011130102010113212002010030 to 011130102010113212002010030
+-I- 54 
+-I- 54 
+-I- 54 
+-I- going from 011130102010113212002010030 to 011130102010113212001010030
+-I- 63 
+-I- 42 
+-I- 54 
+-I- 56 
+-I- going from 011130102010113212001010030 to 011130102010113212001010000
+-I- 72 
+-I- validation failed skipping
+-I- 24 
+-I- 56 
+-I- going from 011130102010113212001010000 to 011130102010113212001010000
+-I- 56 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102010113212001010000 to 011130102010113212001010000
+-I- 112 
+-I- 56 
+-I- 56 
+-I- 112 
+-I- going from 011130102010113212001010000 to 011130102010113212001010000
+-I- 112 
+-I- 56 
+-I- 56 
+-I- 112 
+-I- going from 011130102010113212001010000 to 011130102010113212001010000
+-I- validation failed skipping
+-I- 40 
+-I- 72 
+-I- going from 011130102010113212001010000 to 011130102010313212001010000
+-I- 48 
+-I- 40 
+-I- 72 
+-I- validation failed skipping
+-I- going from 011130102010313212001010000 to 011130102010313212001010000
+-I- 40 
+-I- validation failed skipping
+-I- 24 
+-I- validation failed skipping
+-I- going from 011130102010313212001010000 to 011130102030313212001010000
+-I- 24 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102030313212001010000 to 011130102031313212001010000
+-I- 24 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011130102031313212001010000 to 011130102031313212001010000
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 011130102031313212001010000 to 011130102031313212001010000
+-I- 24 
+-I- 16 
+-I- 18 
+-I- going from 011130102031313212001010000 to 011130102031313212001010030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 16 
+-I- 18 
+-I- 24 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- 18 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 20 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- 24 
+-I- 16 
+-I- 18 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 18 
+-I- going from 011130102031313212001010030 to 011130102031313212001010030
+-I- 24 
+-I- validation failed skipping
+-I- 36 
+-I- going from 011130102031313212001010030 to 011130102031313222001010030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- going from 011130102031313222001010030 to 011030102031313222001010030
+-I- 12 
+-I- validation failed skipping
+-I- 36 
+-I- going from 011030102031313222001010030 to 011030102031313212001010030
+-I- 16 
+-I- validation failed skipping
+-I- 40 
+-I- going from 011030102031313212001010030 to 011030102011313212001010030
+-I- 0 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030102011313212001010030 to 011030102011313212001011030
+-I- 50 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030102011313212001011030 to 011030102011113212001011030
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 011030102011113212001011030 to 011030102010113212001011030
+-I- 48 
+-I- 48 
+-I- 48 
+-I- going from 011030102010113212001011030 to 011030101010113212001011030
+-I- 48 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 011030101010113212001011030 to 011030101110113212001011030
+-I- validation failed skipping
+-I- 42 
+-I- 48 
+-I- 84 
+-I- going from 011030101110113212001011030 to 011030101110112212001011030
+-I- 63 
+-I- 54 
+-I- 42 
+-I- 72 
+-I- going from 011030101110112212001011030 to 011030101110112212001011030
+-I- 63 
+-I- 54 
+-I- 72 
+-I- going from 011030101110112212001011030 to 011030101110112212001011020
+-I- 54 
+-I- validation failed skipping
+-I- 90 
+-I- 70 
+-I- going from 011030101110112212001011020 to 011030101110112212001011020
+-I- 90 
+-I- validation failed skipping
+-I- 54 
+-I- 100 
+-I- going from 011030101110112212001011020 to 011030101110112212001011020
+-I- 63 
+-I- 72 
+-I- going from 011030101110112212001011020 to 011030101110112212001011010
+-I- 63 
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 011030101110112212001011010 to 011030101110112212001011010
+-I- 63 
+-I- 63 
+-I- 63 
+-I- 63 
+-I- going from 011030101110112212001011010 to 011030101110112212001011010
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 63 
+-I- going from 011030101110112212001011010 to 011030101110102212001011010
+-I- 63 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 56 
+-I- going from 011030101110102212001011010 to 011030101110002212001011010
+-I- validation failed skipping
+-I- 56 
+-I- 150 
+-I- 84 
+-I- going from 011030101110002212001011010 to 011030101110002212001011010
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 72 
+-I- going from 011030101110002212001011010 to 011030101110000212001011010
+-I- 245 
+-I- 72 
+-I- 105 
+-I- 132 
+-I- going from 011030101110000212001011010 to 011030101110000012001011010
+-I- 132 
+-I- 108 
+-I- validation failed skipping
+-I- 216 
+-I- going from 011030101110000012001011010 to 011030101120000012001011010
+-I- 180 
+-I- 120 
+-I- 132 
+-I- going from 011030101120000012001011010 to 011030101120000010001011010
+-I- 132 
+-I- 132 
+-I- 132 
+-I- 132 
+-I- going from 011030101120000010001011010 to 011030101120000010001011010
+-I- 180 
+-I- 120 
+-I- going from 011030101120000010001011010 to 011030101120000013001011010
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011030101120000013001011010 to 011030102120000013001011010
+-I- 55 
+-I- 60 
+-I- 135 
+-I- going from 011030102120000013001011010 to 011030102120000023001011010
+-I- validation failed skipping
+-I- 112 
+-I- 168 
+-I- going from 011030102120000023001011010 to 011030102120000022001011010
+-I- 112 
+-I- 112 
+-I- 112 
+-I- going from 011030102120000022001011010 to 011030101120000022001011010
+-I- 112 
+-I- 112 
+-I- 112 
+-I- 112 
+-I- going from 011030101120000022001011010 to 011030101120000022001011010
+-I- 112 
+-I- validation failed skipping
+-I- 80 
+-I- 108 
+-I- going from 011030101120000022001011010 to 011030101020000022001011010
+-I- 120 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 011030101020000022001011010 to 011030101020000122001011010
+-I- 120 
+-I- 120 
+-I- 120 
+-I- 120 
+-I- going from 011030101020000122001011010 to 011030101020000122001011010
+-I- 105 
+-I- validation failed skipping
+-I- 50 
+-I- 120 
+-I- going from 011030101020000122001011010 to 011030101020000122001011310
+-I- 50 
+-I- 50 
+-I- 50 
+-I- going from 011030101020000122001011310 to 011030201020000122001011310
+-I- validation failed skipping
+-I- 84 
+-I- 100 
+-I- going from 011030201020000122001011310 to 011030201020000123001011310
+-I- validation failed skipping
+-I- 100 
+-I- going from 011030201020000123001011310 to 011030201020000120001011310
+-I- 175 
+-I- validation failed skipping
+-I- 180 
+-I- going from 011030201020000120001011310 to 011030201020000120001011110
+-I- 175 
+-I- 175 
+-I- 175 
+-I- going from 011030201020000120001011110 to 011030201020000120002011110
+-I- 135 
+-I- validation failed skipping
+-I- 105 
+-I- going from 011030201020000120002011110 to 011030201320000120002011110
+-I- 75 
+-I- validation failed skipping
+-I- 105 
+-I- going from 011030201320000120002011110 to 011030201320000220002011110
+-I- validation failed skipping
+-I- 96 
+-I- 125 
+-I- going from 011030201320000220002011110 to 011030201330000220002011110
+-I- 96 
+-I- 96 
+-I- 96 
+-I- 96 
+-I- going from 011030201330000220002011110 to 011030201330000220001011110
+-I- 105 
+-I- 120 
+-I- validation failed skipping
+-I- going from 011030201330000220001011110 to 011130201330000220001011110
+-I- 105 
+-I- 105 
+-I- 105 
+-I- going from 011130201330000220001011110 to 011130201330000220001021110
+-I- 175 
+-I- validation failed skipping
+-I- 147 
+-I- going from 011130201330000220001021110 to 011130201330000020001021110
+-I- 147 
+-I- 105 
+-I- 49 
+-I- 147 
+-I- going from 011130201330000020001021110 to 011130201330000020301021110
+-I- 108 
+-I- validation failed skipping
+-I- 96 
+-I- going from 011130201330000020301021110 to 011130201330000023301021110
+-I- 96 
+-I- 96 
+-I- 96 
+-I- 96 
+-I- going from 011130201330000023301021110 to 011130101330000023301021110
+-I- 144 
+-I- 48 
+-I- 144 
+-I- going from 011130101330000023301021110 to 011130101330000023201021110
+-I- 105 
+-I- 105 
+-I- validation failed skipping
+-I- going from 011130101330000023201021110 to 011130101330000013201021110
+-I- 120 
+-I- 63 
+-I- 80 
+-I- going from 011130101330000013201021110 to 011130101330003013201021110
+-I- 80 
+-I- 80 
+-I- 80 
+-I- 80 
+-I- going from 011130101330003013201021110 to 011130101330003013201011110
+-I- 35 
+-I- 72 
+-I- 75 
+-I- going from 011130101330003013201011110 to 011130101330013013201011110
+-I- 35 
+-I- 72 
+-I- validation failed skipping
+-I- 32 
+-I- going from 011130101330013013201011110 to 011030101330013013201011110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 0 
+-I- going from 011030101330013013201011110 to 011030101330013013201010110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 0 
+-I- going from 011030101330013013201010110 to 010030101330013013201010110
+-I- 84 
+-I- 0 
+-I- 84 
+-I- going from 010030101330013013201010110 to 010020101330013013201010110
+-I- 64 
+-I- validation failed skipping
+-I- 48 
+-I- going from 010020101330013013201010110 to 010020101333013013201010110
+-I- 72 
+-I- 48 
+-I- 72 
+-I- going from 010020101333013013201010110 to 010030101333013013201010110
+-I- 48 
+-I- 24 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010030101333013013201010110 to 010030101333013023201010110
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 010030101333013023201010110 to 010030101333013023201010110
+-I- 56 
+-I- 24 
+-I- 56 
+-I- 48 
+-I- going from 010030101333013023201010110 to 010030101333013023001010110
+-I- 80 
+-I- validation failed skipping
+-I- 105 
+-I- going from 010030101333013023001010110 to 010030101333011023001010110
+-I- 105 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- going from 010030101333011023001010110 to 010030101333011123001010110
+-I- 120 
+-I- 40 
+-I- 40 
+-I- going from 010030101333011123001010110 to 010030101333011123001013110
+-I- 56 
+-I- 40 
+-I- 40 
+-I- 56 
+-I- going from 010030101333011123001013110 to 010030101333011123001013110
+-I- 120 
+-I- 40 
+-I- 40 
+-I- going from 010030101333011123001013110 to 010030101333011123001013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 24 
+-I- 40 
+-I- going from 010030101333011123001013110 to 010330101333011123001013110
+-I- 24 
+-I- 24 
+-I- 24 
+-I- 24 
+-I- going from 010330101333011123001013110 to 010330101333011123001013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 21 
+-I- going from 010330101333011123001013110 to 010300101333011123001013110
+-I- 21 
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 48 
+-I- going from 010300101333011123001013110 to 010300101333011123001013110
+-I- 35 
+-I- validation failed skipping
+-I- 21 
+-I- 56 
+-I- going from 010300101333011123001013110 to 010300101333011123001013110
+-I- 21 
+-I- 21 
+-I- 21 
+-I- going from 010300101333011123001013110 to 010300102333011123001013110
+-I- 35 
+-I- validation failed skipping
+-I- 21 
+-I- 56 
+-I- going from 010300102333011123001013110 to 010300102333011123001013110
+-I- 35 
+-I- validation failed skipping
+-I- 21 
+-I- 56 
+-I- going from 010300102333011123001013110 to 010300102333011123001013110
+-I- validation failed skipping
+-I- validation failed skipping
+-I- 21 
+-I- 40 
+-I- going from 010300102333011123001013110 to 010300102333011123001013110
