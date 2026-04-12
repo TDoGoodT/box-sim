@@ -251,21 +251,14 @@ async def bfs_stream(def_arr, depth=27):
 async def astar_stream(def_arr, depth=27):
     """
     A* search guided by a heuristic:
-      f(n) = g(n) + h(n)
-      g(n) = depth already placed (blocks so far) — we want to maximize this, so negate
-      h(n) = compactness score: sum of (3 - coord) for each placed block (reward proximity to origin corner)
-             + reachability penalty: 0 if reachable cells >= remaining, else large penalty
-
-    Priority queue pops the most promising partial solution.
-    Yields whenever we reach a NEW maximum depth (new block placed deeper than before).
+      f(n) = -depth + penalty if not reachable
+    Yields EVERY valid state popped from the heap (not just new max depth),
+    so user sees continuous block placement including backtracking.
+    At the end, replays the full solution path step by step.
     """
-    # heap entry: (priority, tie_breaker, option_str, snake_state_positions, snake_dir)
-    # We rebuild Snake from scratch for each state to avoid shared-state bugs
     counter = 0
-    best_depth = 0
 
     def heuristic(positions):
-        """Higher = better. Sum of (2 - coord) rewards blocks near origin corner."""
         score = 0
         for p in positions:
             score += (2 - p[0]) + (2 - p[1]) + (2 - p[2])
@@ -275,10 +268,9 @@ async def astar_stream(def_arr, depth=27):
         d = len(positions)
         remaining = depth - d
         h = heuristic(positions)
-        # Reachability bonus: heavily penalise if not enough free space
         if remaining > 0 and not free_cells_reachable(positions, remaining):
-            return (1000 - d, -h)   # push to back
-        return (-d, -h)             # deeper + more compact = lower priority value = pops first
+            return (1000 - d, -h)
+        return (-d, -h)
 
     init_snake = Snake(def_arr, "0")
     heap = []
@@ -286,32 +278,33 @@ async def astar_stream(def_arr, depth=27):
     visited = {"0": True}
     iterations = 0
 
-    yield make_event(1, "0", init_snake, False, 0, "astar")
-
     while heap and iterations < 2_000_000:
-        if iterations % 200 == 0:
+        if iterations % 100 == 0:
             await asyncio.sleep(0)
 
         prio, _, option = heapq.heappop(heap)
         iterations += 1
 
-        # Rebuild snake for this option
         snake = Snake(def_arr, option)
         if not snake.check_if_valid():
             continue
 
         d = len(option)
 
-        # Yield whenever we reach a new maximum depth
-        if d > best_depth:
-            best_depth = d
-            done = d >= depth
-            yield make_event(d, option, snake, done, iterations, "astar")
-            if done:
-                logger.info(f"A* solved in {iterations} iters, solution={option}")
-                return
+        # Yield EVERY state so user sees continuous progress
+        done = d >= depth
+        yield make_event(d, option, snake, False, iterations, "astar")
 
-        # Expand children
+        if done:
+            logger.info(f"A* solved in {iterations} iters, solution={option}")
+            # Replay full solution cleanly step by step
+            for i in range(1, len(option) + 1):
+                partial = option[:i]
+                s = Snake(def_arr, partial)
+                await asyncio.sleep(0.06)
+                yield make_event(i, partial, s, i == len(option), iterations, "astar")
+            return
+
         for j in range(4):
             child = option + str(j)
             if visited.get(child):
@@ -320,12 +313,9 @@ async def astar_stream(def_arr, depth=27):
             child_snake = Snake(def_arr, child)
             if not child_snake.check_if_valid():
                 continue
-            positions = child_snake.state
-            p = priority(child, positions)
+            p = priority(child, child_snake.state)
             counter += 1
             heapq.heappush(heap, (p, counter, child))
-
-    yield {"error": "A* exhausted search space", "done": True, "iterations": iterations}
 
 
 # ── API ──────────────────────────────────────────────────────

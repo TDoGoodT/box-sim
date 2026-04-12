@@ -135,17 +135,18 @@ export default function App() {
         </div>
 
         <div className="controls-row">
-          <select
-            className="algo-select"
-            value={algo}
-            onChange={e => setAlgo(e.target.value)}
-          >
+          <div className="algo-toggle">
             {ALGOS.map(a => (
-              <option key={a.id} value={a.id} title={a.title}>
-                {a.label} — {a.title.split('—')[0].trim()}
-              </option>
+              <button
+                key={a.id}
+                className={`algo-btn ${algo === a.id ? 'active' : ''}`}
+                onClick={() => setAlgo(a.id)}
+                title={a.title}
+              >
+                {a.label}
+              </button>
             ))}
-          </select>
+          </div>
 
           {solving ? (
             <button className="stop-btn" onClick={() => {
