@@ -1,38 +1,44 @@
-# box_sim
+# Snake 2 Box — 3D Web App
 
-# Snake 2 Box
-Lately i stumbled upon a 3D puzzle from a shop called [GAYA](https://gaya-game.co.il/collections/games-and-puzzles/products/product-18?variant=31635902915)
+A 3D interactive puzzle solver for the Snake 2 Box puzzle. Built with React + Three.js (frontend) and FastAPI (backend).
 
-## The puzzle
-The puzzle is devilishly simple – a 3x3x3 array of 27 wooden blocks all tied tightly together with a hidden elastic string.\
-Each small block is either a "straight-through" piece (elastic emerges on opposite faces) or a "corner" piece (elastic emerges on two adjacent faces).\
-The goal is to twist the blocks so that the 27 blocks form a cube… again.
+## The Puzzle
 
-![Figure 1.1 - Snake 2 Box](16603.jpeg)
+A 3×3×3 array of 27 wooden blocks linked by an elastic string. Each block is either "straight" (elastic goes through) or "corner" (elastic turns 90°). The goal: fold the snake chain into a perfect cube.
 
-After trying to solve this puzzle many times, testing diffrent approaches I couldn't find any other way than simulate this issue with Python.
+![Puzzle](16603.jpeg)
 
-## The results
-![Visualization of the algorithem](mygif.gif)
-![Visualization of the solution](done.png)
+## Web App
 
-# Using box_sim
-If you want to understand more go to Snake2Box.ipynb
-<pre><code>   
-pip install poetry # if you didn't installed yet
-git clone "repo url"
-cd "repo name"
-poetry install
+- 3D visualization with Three.js + React Three Fiber
+- Step-by-step animation of the folding solution
+- Play/pause, scrubber, speed control
+- Dark theme, blocks colored by type
 
-poetry ./puzzle.py --help
-usage: puzzle.py [-h] --algo a [--depth d] [--viz_snake] [--viz_tree]
+## Running Locally
 
-optional arguments:
-  -h, --help   show this help message and exit\
-  --algo a     The algorithem to solve with current option [dfs, bfs]\
-  --depth d    The max depth to traverse. default is 27 in which the puzzle is solved.\
-  --viz_snake  Visualize the snake when done.\
-  --viz_tree   Visualize the traversed tree when done.\
-  </pre></code>
+```bash
+# Install dependencies
+pip install fastapi uvicorn numpy scipy matplotlib pandas networkx
+cd frontend && npm install
 
-![Using tree_viz](tree.gif)
+# Start backend (port 8000)
+python3 -m uvicorn backend.main:app --reload --port 8000
+
+# Start frontend (port 5173)
+cd frontend && npm run dev
+```
+
+Then open http://localhost:5173
+
+## Stack
+
+- **Frontend**: React + Vite + Three.js (@react-three/fiber, @react-three/drei)
+- **Backend**: FastAPI + Python (original solver logic preserved)
+- **Algorithm**: DFS search through 4^27 rotation space, pruning invalid states
+
+## Solution
+
+The solved option string: `000120020010310231120202033`
+
+Each character (0-3) represents the rotation applied at each corner block.

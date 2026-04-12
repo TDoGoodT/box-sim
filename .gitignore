@@ -1,7 +1,6 @@
+node_modules/
+dist/
 __pycache__/
-box.pyc
-box_old.py
-boxer.ipynb
-test.ipynb
-tets
-utils.pyc
+*.pyc
+.DS_Store
+.venv/

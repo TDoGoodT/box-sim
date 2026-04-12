@@ -1,0 +1,13 @@
+{
+  "name": "box-sim-web",
+  "version": "1.0.0",
+  "description": "Snake 2 Box 3D Puzzle Solver — Web App",
+  "scripts": {
+    "dev": "concurrently \"uvicorn backend.main:app --reload --port 8000\" \"npm run dev --prefix frontend\"",
+    "install:all": "pip install fastapi uvicorn numpy scipy matplotlib pandas networkx --break-system-packages && npm install --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
