@@ -3,6 +3,6 @@ services:
     name: snake2box
     runtime: python
     plan: free
-    buildCommand: pip install uv && uv sync && cd frontend && npm install && npm run build
+    buildCommand: uv sync && cd frontend && npm install && npm run build
     startCommand: uv run uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     autoDeploy: yes

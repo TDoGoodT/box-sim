@@ -3,7 +3,6 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Line } from '@react-three/drei'
 import './App.css'
 
-// Use Vite proxy so same origin works on phone and desktop
 const API = '/api'
 
 function blockColor(defArr, index, isLatest) {
@@ -17,25 +16,18 @@ function Block({ position, index, defArr, isLatest }) {
   const color = blockColor(defArr, index, isLatest)
 
   useFrame((state) => {
-    if (meshRef.current && isLatest) {
+    if (meshRef.current) {
       meshRef.current.scale.setScalar(
-        1 + Math.sin(state.clock.elapsedTime * 3) * 0.08
+        isLatest ? 1 + Math.sin(state.clock.elapsedTime * 3) * 0.08 : 1
       )
-    } else if (meshRef.current) {
-      meshRef.current.scale.setScalar(1)
     }
   })
 
   return (
-    <mesh ref={meshRef} position={position} castShadow receiveShadow>
+    <mesh ref={meshRef} position={position}>
       <boxGeometry args={[0.85, 0.85, 0.85]} />
-      <meshStandardMaterial
-        color={color}
-        roughness={0.3}
-        metalness={0.2}
-        transparent
-        opacity={isLatest ? 1.0 : 0.85}
-      />
+      <meshStandardMaterial color={color} roughness={0.3} metalness={0.2}
+        transparent opacity={isLatest ? 1.0 : 0.85} />
     </mesh>
   )
 }
@@ -44,7 +36,6 @@ function Snake3D({ positions, defArr }) {
   if (!positions || positions.length === 0) return null
   const cx = 1, cy = 1, cz = 1
   const pts = positions.map(p => [p.x - cx, p.y - cy, p.z - cz])
-
   return (
     <group>
       {pts.length > 1 && (
@@ -58,92 +49,75 @@ function Snake3D({ positions, defArr }) {
 }
 
 export default function App() {
-  const [steps, setSteps] = useState([])
   const [defArr, setDefArr] = useState([])
-  const [currentStep, setCurrentStep] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [speed, setSpeed] = useState(600)
-  const [loading, setLoading] = useState(false)
+  const [positions, setPositions] = useState([])
+  const [step, setStep] = useState(0)
+  const [iterations, setIterations] = useState(0)
+  const [solving, setSolving] = useState(false)
   const [solved, setSolved] = useState(false)
   const [error, setError] = useState(null)
-  const [showControls, setShowControls] = useState(false)
-  const intervalRef = useRef(null)
+  const esRef = useRef(null)
 
   useEffect(() => {
-    fetch(`${API}/def_arr`)
-      .then(r => r.json())
-      .then(d => setDefArr(d.def_arr))
-      .catch(() => {})
+    fetch(`${API}/def_arr`).then(r => r.json()).then(d => setDefArr(d.def_arr)).catch(() => {})
   }, [])
 
   function handleSolve() {
-    setLoading(true)
-    setError(null)
+    // Close any existing stream
+    if (esRef.current) esRef.current.close()
+
+    setSolving(true)
     setSolved(false)
-    setIsPlaying(false)
-    setCurrentStep(0)
-    setShowControls(false)
-    console.log('[Solve] Fetching from:', `${API}/solve`)
-    fetch(`${API}/solve`, { method: 'POST' })
-      .then(r => {
-        console.log('[Solve] Response status:', r.status, r.ok)
-        if (!r.ok) throw new Error(`HTTP ${r.status}`)
-        return r.json()
-      })
-      .then(data => {
-        console.log('[Solve] Got data, steps:', data.total_steps, 'first:', data.steps[0])
-        setSteps(data.steps)
-        setDefArr(data.def_arr)
-        setCurrentStep(0)
-        setLoading(false)
+    setError(null)
+    setPositions([])
+    setStep(0)
+    setIterations(0)
+
+    const es = new EventSource(`${API}/solve/stream`)
+    esRef.current = es
+
+    es.onmessage = (e) => {
+      const data = JSON.parse(e.data)
+      if (data.error) {
+        setError(data.error)
+        setSolving(false)
+        es.close()
+        return
+      }
+      setPositions(data.positions)
+      setStep(data.step)
+      setIterations(data.iterations)
+      if (data.done) {
+        setSolving(false)
         setSolved(true)
-        setShowControls(true)
-        // Auto-play the animation after a short delay
-        setTimeout(() => setIsPlaying(true), 400)
-      })
-      .catch(e => {
-        console.error('[Solve] Error:', e)
-        setLoading(false)
-        setError(`Error: ${e.message}`)
-      })
+        es.close()
+      }
+    }
+
+    es.onerror = () => {
+      setError('Connection lost. Is the backend running?')
+      setSolving(false)
+      es.close()
+    }
   }
 
-  useEffect(() => {
-    if (isPlaying && steps.length > 0) {
-      intervalRef.current = setInterval(() => {
-        setCurrentStep(s => {
-          if (s >= steps.length - 1) {
-            setIsPlaying(false)
-            return s
-          }
-          return s + 1
-        })
-      }, speed)
-    } else {
-      clearInterval(intervalRef.current)
-    }
-    return () => clearInterval(intervalRef.current)
-  }, [isPlaying, speed, steps.length])
-
-  const currentPositions = steps[currentStep]?.positions || []
-  const isComplete = steps[currentStep]?.valid
+  const isComplete = solved && step === 27
 
   return (
     <div className="app">
-      {/* ── Canvas (full screen background) ── */}
       <div className="canvas-wrap">
         <Canvas camera={{ position: [4, 4, 4], fov: 50 }} shadows>
           <color attach="background" args={['#0d0d14']} />
           <ambientLight intensity={0.4} />
           <directionalLight position={[5, 8, 5]} intensity={1.2} castShadow />
           <pointLight position={[-4, 4, -4]} intensity={0.5} color="#a78bfa" />
-          <Snake3D positions={currentPositions} defArr={defArr} />
+          <Snake3D positions={positions} defArr={defArr} />
           <gridHelper args={[6, 6, '#333', '#222']} position={[0, -1.5, 0]} />
           <OrbitControls enableDamping dampingFactor={0.08} />
         </Canvas>
       </div>
 
-      {/* ── Top bar ── */}
+      {/* Top bar */}
       <div className="topbar">
         <div className="logo">
           <span>🐍</span>
@@ -152,54 +126,30 @@ export default function App() {
             <p>3×3×3 Puzzle Solver</p>
           </div>
         </div>
-        <button
-          className={`solve-btn ${loading ? 'loading' : ''}`}
-          onClick={handleSolve}
-          disabled={loading}
-        >
-          {loading ? '🔄 Solving…' : '✨ Solve'}
+        <button className={`solve-btn ${solving ? 'loading' : ''}`}
+          onClick={handleSolve} disabled={solving}>
+          {solving ? '🔄 Solving…' : solved ? '🔁 Solve Again' : '✨ Solve'}
         </button>
       </div>
 
-      {/* ── Error ── */}
-      {error && (
-        <div className="error-banner">{error}</div>
-      )}
+      {/* Error */}
+      {error && <div className="error-banner">{error}</div>}
 
-      {/* ── Bottom controls panel ── */}
-      {showControls && solved && steps.length > 0 && (
+      {/* Status panel — shows while solving or when done */}
+      {(solving || solved) && (
         <div className="bottom-panel">
           <div className="step-row">
-            <span className={`step-badge ${isComplete ? 'complete' : ''}`}>
-              {isComplete ? '✅ Solved!' : `Step ${currentStep + 1} / ${steps.length}`}
+            <span className={`step-badge ${isComplete ? 'complete' : solving ? 'searching' : ''}`}>
+              {isComplete ? '✅ Solved!' : solving ? '🔍 Searching…' : `Step ${step} / 27`}
             </span>
-            <span className="block-count">{currentPositions.length} blocks</span>
+            <span className="block-count">
+              {positions.length} block{positions.length !== 1 ? 's' : ''} placed
+              {iterations > 0 && ` · ${iterations.toLocaleString()} iters`}
+            </span>
           </div>
 
           <div className="progress-bar">
-            <div className="progress-fill" style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }} />
-          </div>
-
-          <div className="playback">
-            <button onClick={() => setCurrentStep(s => Math.max(0, s - 1))} disabled={currentStep === 0}>⏮</button>
-            <button className="play-pause" onClick={() => setIsPlaying(p => !p)}>
-              {isPlaying ? '⏸' : '▶️'}
-            </button>
-            <button onClick={() => setCurrentStep(s => Math.min(steps.length - 1, s + 1))} disabled={currentStep === steps.length - 1}>⏭</button>
-          </div>
-
-          <div className="sliders">
-            <div className="slider-row">
-              <label>Speed</label>
-              <input type="range" min={100} max={1200} step={100}
-                value={1300 - speed}
-                onChange={e => setSpeed(1300 - Number(e.target.value))} />
-            </div>
-            <div className="slider-row">
-              <label>Step</label>
-              <input type="range" min={0} max={steps.length - 1} value={currentStep}
-                onChange={e => { setIsPlaying(false); setCurrentStep(Number(e.target.value)) }} />
-            </div>
+            <div className="progress-fill" style={{ width: `${(step / 27) * 100}%` }} />
           </div>
 
           <div className="legend">
@@ -210,7 +160,7 @@ export default function App() {
         </div>
       )}
 
-      {!solved && !loading && !error && (
+      {!solving && !solved && !error && (
         <div className="canvas-hint">Drag to rotate · Pinch to zoom</div>
       )}
     </div>
