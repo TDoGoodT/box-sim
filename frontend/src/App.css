@@ -77,6 +77,20 @@ body {
 .algo-select:disabled { opacity: 0.5; cursor: not-allowed; }
 .algo-select option { background: #1e1e30; color: #e2e8f0; }
 
+.stop-btn {
+  padding: 10px 20px;
+  background: #7f1d1d;
+  color: #fca5a5;
+  border: 1px solid #991b1b;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.stop-btn:hover { background: #991b1b; color: #fff; }
+
 .solve-btn {
   padding: 10px 20px;
   background: linear-gradient(135deg, #7c3aed, #2563eb);

@@ -139,7 +139,6 @@ export default function App() {
             className="algo-select"
             value={algo}
             onChange={e => setAlgo(e.target.value)}
-            disabled={solving}
           >
             {ALGOS.map(a => (
               <option key={a.id} value={a.id} title={a.title}>
@@ -148,10 +147,19 @@ export default function App() {
             ))}
           </select>
 
-          <button className={`solve-btn ${solving ? 'loading' : ''}`}
-            onClick={handleSolve} disabled={solving}>
-            {solving ? '🔄 Solving…' : solved ? '🔁 Again' : '✨ Solve'}
-          </button>
+          {solving ? (
+            <button className="stop-btn" onClick={() => {
+              if (esRef.current) esRef.current.close()
+              setSolving(false)
+            }}>
+              ⏹ Stop
+            </button>
+          ) : (
+            <button className={`solve-btn ${solving ? 'loading' : ''}`}
+              onClick={handleSolve}>
+              {solved ? '🔁 Again' : '✨ Solve'}
+            </button>
+          )}
         </div>
       </div>
 
