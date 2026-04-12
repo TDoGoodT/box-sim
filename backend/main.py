@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import sys, os
 
@@ -22,7 +24,9 @@ def states_to_json(states):
     return [{"x": int(s[0]), "y": int(s[1]), "z": int(s[2])} for s in states]
 
 
-@app.get("/snake/{option}")
+# ── API routes ──────────────────────────────────────────────
+
+@app.get("/api/snake/{option}")
 def get_snake(option: str):
     if len(option) > 27 or not all(c in "0123" for c in option):
         raise HTTPException(status_code=400, detail="Invalid option string")
@@ -35,9 +39,8 @@ def get_snake(option: str):
     }
 
 
-@app.post("/solve")
+@app.post("/api/solve")
 def solve():
-    """Return all 27 steps of the solution, each showing block positions."""
     steps = []
     for i in range(1, len(SOLUTION) + 1):
         partial = SOLUTION[:i]
@@ -56,6 +59,19 @@ def solve():
     }
 
 
-@app.get("/def_arr")
+@app.get("/api/def_arr")
 def get_def_arr():
     return {"def_arr": def_arr}
+
+
+# ── Serve React frontend ─────────────────────────────────────
+
+DIST = os.path.join(os.path.dirname(__file__), "..", "frontend", "dist")
+
+if os.path.isdir(DIST):
+    app.mount("/assets", StaticFiles(directory=os.path.join(DIST, "assets")), name="assets")
+
+    @app.get("/{full_path:path}")
+    def serve_frontend(full_path: str):
+        index = os.path.join(DIST, "index.html")
+        return FileResponse(index)
