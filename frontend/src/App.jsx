@@ -56,14 +56,21 @@ export default function App() {
   const [solving, setSolving] = useState(false)
   const [solved, setSolved] = useState(false)
   const [error, setError] = useState(null)
+  const [algo, setAlgo] = useState('dfs')
   const esRef = useRef(null)
+
+  const ALGOS = [
+    { id: 'dfs',        label: 'DFS',  title: 'Depth-First Search — goes deep, backtracks on dead ends' },
+    { id: 'bfs',        label: 'BFS',  title: 'Breadth-First Search — explores level by level' },
+    { id: 'dfs_pruned', label: 'DFS+', title: 'DFS + bbox & flood-fill pruning — far fewer iterations' },
+    { id: 'astar',      label: 'A★',   title: 'A* — guided by depth + compactness heuristic' },
+  ]
 
   useEffect(() => {
     fetch(`${API}/def_arr`).then(r => r.json()).then(d => setDefArr(d.def_arr)).catch(() => {})
   }, [])
 
   function handleSolve() {
-    // Close any existing stream
     if (esRef.current) esRef.current.close()
 
     setSolving(true)
@@ -73,7 +80,7 @@ export default function App() {
     setStep(0)
     setIterations(0)
 
-    const es = new EventSource(`${API}/solve/stream`)
+    const es = new EventSource(`${API}/solve/stream?algo=${algo}`)
     esRef.current = es
 
     es.onmessage = (e) => {
@@ -126,21 +133,38 @@ export default function App() {
             <p>3×3×3 Puzzle Solver</p>
           </div>
         </div>
-        <button className={`solve-btn ${solving ? 'loading' : ''}`}
-          onClick={handleSolve} disabled={solving}>
-          {solving ? '🔄 Solving…' : solved ? '🔁 Solve Again' : '✨ Solve'}
-        </button>
+
+        <div className="controls-row">
+          <div className="algo-toggle">
+            {ALGOS.map(a => (
+              <button
+                key={a.id}
+                className={`algo-btn ${algo === a.id ? 'active' : ''}`}
+                onClick={() => setAlgo(a.id)}
+                disabled={solving}
+                title={a.title}
+              >
+                {a.label}
+              </button>
+            ))}
+          </div>
+
+          <button className={`solve-btn ${solving ? 'loading' : ''}`}
+            onClick={handleSolve} disabled={solving}>
+            {solving ? '🔄 Solving…' : solved ? '🔁 Again' : '✨ Solve'}
+          </button>
+        </div>
       </div>
 
       {/* Error */}
       {error && <div className="error-banner">{error}</div>}
 
-      {/* Status panel — shows while solving or when done */}
+      {/* Status panel */}
       {(solving || solved) && (
         <div className="bottom-panel">
           <div className="step-row">
-            <span className={`step-badge ${isComplete ? 'complete' : solving ? 'searching' : ''}`}>
-              {isComplete ? '✅ Solved!' : solving ? '🔍 Searching…' : `Step ${step} / 27`}
+            <span className={`step-badge ${isComplete ? 'complete' : ''}`}>
+              {isComplete ? '✅ Solved!' : solving ? `🔍 ${algo.toUpperCase()} searching…` : `Step ${step} / 27`}
             </span>
             <span className="block-count">
               {positions.length} block{positions.length !== 1 ? 's' : ''} placed
