@@ -27,10 +27,12 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: rgba(13, 13, 20, 0.85);
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(13, 13, 20, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #1e1e30;
   z-index: 10;
@@ -55,6 +57,48 @@ body {
 }
 
 .logo p { font-size: 0.7rem; color: #64748b; }
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.algo-toggle {
+  display: flex;
+  background: #1e1e30;
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
+  flex-wrap: nowrap;
+}
+
+.algo-btn {
+  padding: 6px 11px;
+  background: transparent;
+  color: #64748b;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.algo-btn:hover:not(:disabled):not(.active) {
+  color: #e2e8f0;
+  background: #2d2d45;
+}
+
+.algo-btn.active {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+}
+
+.algo-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .solve-btn {
   padding: 10px 20px;
