@@ -73,11 +73,9 @@ export default function App() {
   const framesRef = useRef([])
 
   const ALGOS = [
-    { id: 'dfs',        label: 'DFS',   title: 'Depth-First Search — goes deep, backtracks on dead ends' },
-    { id: 'bfs',        label: 'BFS',   title: 'Breadth-First Search — explores level by level' },
-    { id: 'dfs_pruned', label: 'DFS+',  title: 'DFS + bbox & flood-fill pruning — ~18x faster than DFS' },
-    { id: 'astar',      label: 'A★',    title: 'A* — guided by depth + compactness heuristic (~280x faster)' },
-    { id: 'warnsdorff', label: 'Wᵥ',   title: 'Warnsdorff — minimum-degree ordering + leaf pruning (fastest!)' },
+    { id: 'dfs',   label: 'DFS',  title: 'Depth-First Search — goes deep, backtracks on dead ends' },
+    { id: 'bfs',   label: 'BFS',  title: 'Breadth-First Search — explores level by level' },
+    { id: 'astar', label: 'A★',   title: 'A* — guided by depth + compactness heuristic (~280x faster)' },
   ]
 
   useEffect(() => {
