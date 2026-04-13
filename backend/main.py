@@ -38,6 +38,18 @@ def make_event(step, option, snake, done, iterations, algo):
         "algo": algo,
     }
 
+def make_event_pos(step, option, positions, done, iterations, algo):
+    """Like make_event but takes a raw positions list — no Snake object needed."""
+    return {
+        "step": step,
+        "option": option,
+        "positions": [{"x": p[0], "y": p[1], "z": p[2]} for p in positions],
+        "valid": True,
+        "done": done,
+        "iterations": iterations,
+        "algo": algo,
+    }
+
 
 async def replay_solution(solution_option, def_arr, iterations, algo, delay=0.06):
     """
@@ -495,11 +507,10 @@ async def astar_stream(def_arr, depth=27):
                 yield frame
             return
 
-        # Stream a frame only when reaching a new depth level
+        # Stream a frame on every iteration (so UI sees live search like DFS)
+        yield make_event_pos(d, option, positions, False, iterations, "astar")
         if d > best_depth:
             best_depth = d
-            snake = Snake(def_arr, option)
-            yield make_event(d, option, snake, False, iterations, "astar")
 
         seg_idx = len(positions) - 1
 
