@@ -227,10 +227,12 @@ body {
   gap: 10px;
   font-size: 0.78rem;
   color: #94a3b8;
+  width: 100%;
 }
 .slider-row label { min-width: 36px; }
 .slider-row input[type="range"] {
   flex: 1;
+  min-width: 0;
   accent-color: #7c3aed;
   cursor: pointer;
   height: 20px;
@@ -282,12 +284,15 @@ body {
   .bottom-panel {
     top: 0; bottom: 0;
     right: auto;
-    width: 300px;
+    width: 320px;
     border-top: none;
     border-right: 1px solid #1e1e30;
     padding: 80px 20px 24px;
     justify-content: flex-start;
+    overflow-y: auto;
   }
 
-  .canvas-wrap { left: 300px; }
+  .canvas-wrap { left: 320px; }
+
+  .playback button { padding: 10px 6px; font-size: 1rem; }
 }
