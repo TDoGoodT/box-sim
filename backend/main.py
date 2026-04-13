@@ -327,19 +327,11 @@ def _leaf_prune(occupied, remaining):
 
 async def warnsdorff_stream(def_arr, depth=27):
     """
-    DFS with Warnsdorff move ordering + leaf pruning.
-    Only yields on forward progress (new max depth), then replays solution.
-    At each step, sort rotation choices 0-3 by how many free neighbors
-    the resulting next cell has (fewest = try first — Warnsdorff rule).
+    Iterative DFS with Warnsdorff move ordering + leaf pruning.
+    Yields progress every N iterations so the UI never looks frozen.
     """
-    ALL = frozenset((x,y,z) for x in range(3) for y in range(3) for z in range(3))
-    count = [0]
-    pruned = [0]
-    best_depth = [0]
-
-    def warnsdorff_key(next_pos_t, occupied):
-        """Free neighbor count of next_pos, excluding occupied. Fewest = best."""
-        x, y, z = next_pos_t
+    def warnsdorff_key(pos, occupied):
+        x, y, z = pos
         n = 0
         for dx, dy, dz in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
             nb = (x+dx, y+dy, z+dz)
@@ -347,87 +339,83 @@ async def warnsdorff_stream(def_arr, depth=27):
                 n += 1
         return n
 
-    DONE = object()  # sentinel
+    count = 0
+    pruned = 0
+    solution = None
 
-    async def dfs(op, occupied):
-        count[0] += 1
-        if count[0] % 300 == 0:
-            await asyncio.sleep(0)
-
-        # Pruning: bbox
-        snake_now = Snake(def_arr, op)
-        pos_list = snake_now.state
-        if not bbox_fits(pos_list):
-            pruned[0] += 1
-            return
-
-        remaining = depth - len(op)
-
-        # Pruning: leaf/degree-1
-        if _leaf_prune(occupied, remaining):
-            pruned[0] += 1
-            return
-
-        # Pruning: flood fill
-        if remaining > 0 and not free_cells_reachable(pos_list, remaining):
-            pruned[0] += 1
-            return
-
-        if len(op) >= depth:
-            yield op  # solution string
-            return
-
-        # Try all 4 rotations, sorted by Warnsdorff key of next cell
-        candidates = []
+    # Stack entries: (op_string, occupied_frozenset, candidates_list, candidate_index)
+    # candidates_list = sorted list of (key, r, next_pos)
+    def get_candidates(op, occupied):
+        cands = []
         for r in range(4):
-            test = Snake(def_arr, op + str(r))
+            test_op = op + str(r)
+            test = Snake(def_arr, test_op)
             if test.check_if_valid():
                 next_pos = tuple(test.state[-1])
                 if next_pos not in occupied:
                     key = warnsdorff_key(next_pos, occupied | {next_pos})
-                    candidates.append((key, r, next_pos))
+                    cands.append((key, r, next_pos))
+        cands.sort(key=lambda x: x[0])
+        return cands
 
-        # Sort: fewest free neighbors first (Warnsdorff)
-        candidates.sort(key=lambda x: x[0])
+    start_op = "0"
+    start_occ = frozenset({(0, 0, 0)})
+    stack = [(start_op, start_occ, get_candidates(start_op, start_occ), 0)]
 
-        for _, r, next_pos in candidates:
-            child_op = op + str(r)
-            child_occ = occupied | {next_pos}
+    yield make_event(1, start_op, Snake(def_arr, start_op), False, 0, "warnsdorff")
 
-            # Yield on forward depth progress
-            d = len(child_op)
-            if d > best_depth[0]:
-                best_depth[0] = d
-                child_snake = Snake(def_arr, child_op)
-                yield make_event(d, child_op, child_snake, False, count[0], "warnsdorff")
+    while stack:
+        op, occupied, candidates, idx = stack[-1]
 
-            found = False
-            async for event in dfs(child_op, child_occ):
-                if isinstance(event, str):
-                    yield event  # pass solution up
-                    found = True
-                    break
-                else:
-                    yield event
-            if found:
-                return
+        if idx >= len(candidates):
+            stack.pop()
+            continue
 
-    yield make_event(1, "0", Snake(def_arr, "0"), False, 0, "warnsdorff")
+        # Advance candidate index for next visit
+        stack[-1] = (op, occupied, candidates, idx + 1)
 
-    start_occ = frozenset({(0,0,0)})
-    solution = None
-    async for event in dfs("0", start_occ):
-        if isinstance(event, str):
-            solution = event
-        else:
-            yield event
+        _, r, next_pos = candidates[idx]
+        child_op = op + str(r)
+        child_occ = occupied | {next_pos}
+
+        count += 1
+        if count % 200 == 0:
+            await asyncio.sleep(0)
+
+        # Pruning
+        child_snake = Snake(def_arr, child_op)
+        pos_list = child_snake.state
+
+        if not bbox_fits(pos_list):
+            pruned += 1
+            continue
+
+        remaining = depth - len(child_op)
+
+        if _leaf_prune(child_occ, remaining):
+            pruned += 1
+            continue
+
+        if remaining > 0 and not free_cells_reachable(pos_list, remaining):
+            pruned += 1
+            continue
+
+        # Yield progress every step (user sees live search)
+        yield make_event(len(child_op), child_op, child_snake, False, count, "warnsdorff")
+
+        if len(child_op) >= depth:
+            solution = child_op
+            break
+
+        child_cands = get_candidates(child_op, child_occ)
+        stack.append((child_op, child_occ, child_cands, 0))
 
     if solution:
-        logger.info(f"Warnsdorff solved in {count[0]} iters ({pruned[0]} pruned), solution={solution}")
-        async for frame in replay_solution(solution, def_arr, count[0], "warnsdorff"):
+        logger.info(f"Warnsdorff solved in {count} iters ({pruned} pruned), solution={solution}")
+        async for frame in replay_solution(solution, def_arr, count, "warnsdorff"):
             yield frame
     else:
-        yield {"error": "Warnsdorff exhausted", "done": True, "iterations": count[0]}
+        yield {"error": "Warnsdorff exhausted", "done": True, "iterations": count}
 
 
 async def astar_stream(def_arr, depth=27):
