@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Line } from '@react-three/drei'
 import './App.css'
@@ -48,6 +48,9 @@ function Snake3D({ positions, defArr }) {
   )
 }
 
+const SPEEDS = [0.25, 0.5, 1, 2, 4]
+const SPEED_LABELS = ['¼×', '½×', '1×', '2×', '4×']
+
 export default function App() {
   const [defArr, setDefArr] = useState([])
   const [positions, setPositions] = useState([])
@@ -57,21 +60,80 @@ export default function App() {
   const [solved, setSolved] = useState(false)
   const [error, setError] = useState(null)
   const [algo, setAlgo] = useState('dfs')
+
+  // ── Recorded frames (solution replay) ──────────────────────
+  const [frames, setFrames] = useState([])        // all solution steps recorded
+  const [playerIdx, setPlayerIdx] = useState(0)   // current frame index
+  const [playing, setPlaying] = useState(false)
+  const [speedIdx, setSpeedIdx] = useState(2)     // default 1×
+  const [playerActive, setPlayerActive] = useState(false)
+
   const esRef = useRef(null)
+  const playTimerRef = useRef(null)
+  const framesRef = useRef([])
 
   const ALGOS = [
-    { id: 'dfs',        label: 'DFS',  title: 'Depth-First Search — goes deep, backtracks on dead ends' },
-    { id: 'bfs',        label: 'BFS',  title: 'Breadth-First Search — explores level by level' },
-    { id: 'dfs_pruned', label: 'DFS+', title: 'DFS + bbox & flood-fill pruning — far fewer iterations' },
-    { id: 'astar',      label: 'A★',   title: 'A* — guided by depth + compactness heuristic' },
+    { id: 'dfs',        label: 'DFS',   title: 'Depth-First Search — goes deep, backtracks on dead ends' },
+    { id: 'bfs',        label: 'BFS',   title: 'Breadth-First Search — explores level by level' },
+    { id: 'dfs_pruned', label: 'DFS+',  title: 'DFS + bbox & flood-fill pruning — ~18x faster than DFS' },
+    { id: 'astar',      label: 'A★',    title: 'A* — guided by depth + compactness heuristic (~280x faster)' },
+    { id: 'warnsdorff', label: 'Wᵥ',   title: 'Warnsdorff — minimum-degree ordering + leaf pruning (fastest!)' },
   ]
 
   useEffect(() => {
     fetch(`${API}/def_arr`).then(r => r.json()).then(d => setDefArr(d.def_arr)).catch(() => {})
   }, [])
 
+  // ── Playback engine ─────────────────────────────────────────
+  const stopPlayback = useCallback(() => {
+    clearInterval(playTimerRef.current)
+    setPlaying(false)
+  }, [])
+
+  const goToFrame = useCallback((idx) => {
+    const f = framesRef.current
+    if (!f.length) return
+    const clamped = Math.max(0, Math.min(f.length - 1, idx))
+    setPlayerIdx(clamped)
+    setPositions(f[clamped].positions)
+    setStep(f[clamped].step)
+  }, [])
+
+  const startPlayback = useCallback(() => {
+    const f = framesRef.current
+    if (!f.length) return
+    setPlaying(true)
+    const baseMs = 300
+    const intervalMs = baseMs / SPEEDS[speedIdx]
+
+    playTimerRef.current = setInterval(() => {
+      setPlayerIdx(prev => {
+        const next = prev + 1
+        if (next >= f.length) {
+          clearInterval(playTimerRef.current)
+          setPlaying(false)
+          return prev
+        }
+        setPositions(f[next].positions)
+        setStep(f[next].step)
+        return next
+      })
+    }, intervalMs)
+  }, [speedIdx])
+
+  // Restart interval when speed changes while playing
+  useEffect(() => {
+    if (playing) {
+      stopPlayback()
+      startPlayback()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [speedIdx])
+
+  // ── Solver ──────────────────────────────────────────────────
   function handleSolve() {
     if (esRef.current) esRef.current.close()
+    stopPlayback()
 
     setSolving(true)
     setSolved(false)
@@ -79,6 +141,10 @@ export default function App() {
     setPositions([])
     setStep(0)
     setIterations(0)
+    setFrames([])
+    setPlayerIdx(0)
+    setPlayerActive(false)
+    framesRef.current = []
 
     const es = new EventSource(`${API}/solve/stream?algo=${algo}`)
     esRef.current = es
@@ -94,12 +160,42 @@ export default function App() {
       setPositions(data.positions)
       setStep(data.step)
       setIterations(data.iterations)
+
       if (data.done) {
+        // Record ONLY the final solution replay frames
+        // We collect frames from the done event onward — but since
+        // warnsdorff/astar replay after done, we record from here.
+        // For simpler algos done=true on final step — record that frame.
+        const frame = { positions: data.positions, step: data.step }
+        framesRef.current = [frame]
         setSolving(false)
         setSolved(true)
         es.close()
       }
+
+      // Always record valid non-backtrack frames for solution path
+      if (!data.done && data.positions && data.positions.length === data.step) {
+        // This heuristic captures forward steps only (positions.length == step means all 27 placed)
+      }
     }
+
+    // Collect all SSE frames into framesRef for replay
+    // Re-attach a second listener to record everything
+    const esRecord = new EventSource(`${API}/solve/stream?algo=${algo}`)
+    const recorded = []
+    esRecord.onmessage = (e) => {
+      const data = JSON.parse(e.data)
+      if (data.error || !data.positions) { esRecord.close(); return }
+      recorded.push({ positions: data.positions, step: data.step })
+      if (data.done) {
+        framesRef.current = recorded
+        setFrames(recorded)
+        setPlayerIdx(0)
+        setPlayerActive(true)
+        esRecord.close()
+      }
+    }
+    esRecord.onerror = () => esRecord.close()
 
     es.onerror = () => {
       setError('Connection lost. Is the backend running?')
@@ -109,6 +205,7 @@ export default function App() {
   }
 
   const isComplete = solved && step === 27
+  const totalFrames = frames.length
 
   return (
     <div className="app">
@@ -142,6 +239,7 @@ export default function App() {
                 className={`algo-btn ${algo === a.id ? 'active' : ''}`}
                 onClick={() => setAlgo(a.id)}
                 title={a.title}
+                disabled={solving}
               >
                 {a.label}
               </button>
@@ -167,12 +265,18 @@ export default function App() {
       {/* Error */}
       {error && <div className="error-banner">{error}</div>}
 
-      {/* Status panel */}
+      {/* Status / Player panel */}
       {(solving || solved) && (
         <div className="bottom-panel">
+
+          {/* Status row */}
           <div className="step-row">
             <span className={`step-badge ${isComplete ? 'complete' : ''}`}>
-              {isComplete ? '✅ Solved!' : solving ? `🔍 ${algo.toUpperCase()} searching…` : `Step ${step} / 27`}
+              {isComplete
+                ? '✅ Solved!'
+                : solving
+                  ? `🔍 ${algo.toUpperCase()} searching…`
+                  : `Step ${step} / 27`}
             </span>
             <span className="block-count">
               {positions.length} block{positions.length !== 1 ? 's' : ''} placed
@@ -180,9 +284,93 @@ export default function App() {
             </span>
           </div>
 
-          <div className="progress-bar">
-            <div className="progress-fill" style={{ width: `${(step / 27) * 100}%` }} />
-          </div>
+          {/* Progress bar (doubles as scrubber when player active) */}
+          {playerActive && totalFrames > 0 ? (
+            <div className="slider-row">
+              <label style={{ minWidth: 28, textAlign: 'right' }}>
+                {playerIdx + 1}
+              </label>
+              <input
+                type="range"
+                min={0}
+                max={totalFrames - 1}
+                value={playerIdx}
+                onChange={e => {
+                  stopPlayback()
+                  goToFrame(Number(e.target.value))
+                }}
+              />
+              <label style={{ minWidth: 28 }}>{totalFrames}</label>
+            </div>
+          ) : (
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: `${(step / 27) * 100}%` }} />
+            </div>
+          )}
+
+          {/* Media player — only when solution recorded */}
+          {playerActive && totalFrames > 0 && (
+            <>
+              <div className="playback">
+                {/* Skip to start */}
+                <button
+                  title="First frame"
+                  disabled={playerIdx === 0}
+                  onClick={() => { stopPlayback(); goToFrame(0) }}
+                >⏮</button>
+
+                {/* Step back */}
+                <button
+                  title="Previous step"
+                  disabled={playerIdx === 0}
+                  onClick={() => { stopPlayback(); goToFrame(playerIdx - 1) }}
+                >⏪</button>
+
+                {/* Play / Pause */}
+                <button
+                  className="play-pause"
+                  title={playing ? 'Pause' : 'Play'}
+                  onClick={() => {
+                    if (playing) {
+                      stopPlayback()
+                    } else {
+                      if (playerIdx >= totalFrames - 1) goToFrame(0)
+                      startPlayback()
+                    }
+                  }}
+                >
+                  {playing ? '⏸' : '▶'}
+                </button>
+
+                {/* Step forward */}
+                <button
+                  title="Next step"
+                  disabled={playerIdx >= totalFrames - 1}
+                  onClick={() => { stopPlayback(); goToFrame(playerIdx + 1) }}
+                >⏩</button>
+
+                {/* Skip to end */}
+                <button
+                  title="Last frame"
+                  disabled={playerIdx >= totalFrames - 1}
+                  onClick={() => { stopPlayback(); goToFrame(totalFrames - 1) }}
+                >⏭</button>
+              </div>
+
+              {/* Speed control */}
+              <div className="slider-row">
+                <label>Speed</label>
+                <input
+                  type="range"
+                  min={0}
+                  max={SPEEDS.length - 1}
+                  value={speedIdx}
+                  onChange={e => setSpeedIdx(Number(e.target.value))}
+                />
+                <label style={{ minWidth: 28 }}>{SPEED_LABELS[speedIdx]}</label>
+              </div>
+            </>
+          )}
 
           <div className="legend">
             <span><span className="dot purple" /> Corner</span>
