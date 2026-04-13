@@ -39,6 +39,20 @@ def make_event(step, option, snake, done, iterations, algo):
     }
 
 
+async def replay_solution(solution_option, def_arr, iterations, algo, delay=0.06):
+    """
+    Yield a clean 27-step replay of the solution, one block at a time.
+    The first event has done=False (search done marker), then steps 1..27,
+    with the final step having done=True (solution complete).
+    Called by every algo after finding the solution.
+    """
+    for i in range(1, len(solution_option) + 1):
+        partial = solution_option[:i]
+        s = Snake(def_arr, partial)
+        await asyncio.sleep(delay)
+        yield make_event(i, partial, s, i == len(solution_option), iterations, algo)
+
+
 # ── Pruning helpers ──────────────────────────────────────────
 
 def bbox_fits(positions):
@@ -120,10 +134,12 @@ async def dfs_stream(def_arr, depth=27):
                 op = next_option
                 Q = [0, 1, 2, 3]
                 done = len(op) >= depth
-                yield make_event(len(op), op, snake, done, count, "dfs")
                 if done:
                     logger.info(f"DFS solved in {count} iters, solution={op}")
+                    async for frame in replay_solution(op, def_arr, count, "dfs"):
+                        yield frame
                     return
+                yield make_event(len(op), op, snake, False, count, "dfs")
             else:
                 snake.pop_last_block()
         except IndexError:
@@ -190,10 +206,12 @@ async def dfs_pruned_stream(def_arr, depth=27):
                 op = next_option
                 Q = [0, 1, 2, 3]
                 done = len(op) >= depth
-                yield make_event(len(op), op, snake, done, count, "dfs_pruned")
                 if done:
                     logger.info(f"DFS+pruning solved in {count} iters ({pruned} pruned), solution={op}")
+                    async for frame in replay_solution(op, def_arr, count, "dfs_pruned"):
+                        yield frame
                     return
+                yield make_event(len(op), op, snake, False, count, "dfs_pruned")
             else:
                 snake.pop_last_block()
         except IndexError:
@@ -233,11 +251,12 @@ async def bfs_stream(def_arr, depth=27):
                     next_frontier.append(new_option)
                     if first_at_level:
                         first_at_level = False
-                        done = level >= depth
-                        yield make_event(level, new_option, snake, done, count, "bfs")
-                        if done:
+                        if level >= depth:
                             logger.info(f"BFS solved in {count} iters, solution={new_option}")
+                            async for frame in replay_solution(new_option, def_arr, count, "bfs"):
+                                yield frame
                             return
+                        yield make_event(level, new_option, snake, False, count, "bfs")
 
         if not next_frontier:
             yield {"error": "No solution at this depth", "done": True, "iterations": count}
@@ -247,6 +266,149 @@ async def bfs_stream(def_arr, depth=27):
 
 
 # ── A* guided search ─────────────────────────────────────────
+
+# ── Warnsdorff DFS ───────────────────────────────────────────
+
+def _count_free_neighbors(pos, occupied):
+    """Count in-bounds, unoccupied neighbors of pos (tuple)."""
+    x, y, z = pos
+    count = 0
+    for dx, dy, dz in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
+        nx, ny, nz = x+dx, y+dy, z+dz
+        nb = (nx, ny, nz)
+        if nb not in occupied and 0 <= nx <= 2 and 0 <= ny <= 2 and 0 <= nz <= 2:
+            count += 1
+    return count
+
+def _leaf_prune(occupied, remaining):
+    """
+    Fast O(27) check: any free cell with 0 free neighbors = isolated = prune.
+    More than 1 free cell with exactly 1 free neighbor = two dead-end leaves = prune
+    (Hamiltonian path can only have ONE endpoint / dead-end).
+    """
+    if remaining == 0:
+        return False
+    ALL = frozenset((x,y,z) for x in range(3) for y in range(3) for z in range(3))
+    free = ALL - occupied
+    leaves = 0
+    for cell in free:
+        x, y, z = cell
+        nbr = 0
+        for dx, dy, dz in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
+            if (x+dx, y+dy, z+dz) in free:
+                nbr += 1
+        if nbr == 0:
+            return True   # isolated cell
+        if nbr == 1:
+            leaves += 1
+            if leaves > 1:
+                return True  # two dead-end leaves → impossible
+    return False
+
+async def warnsdorff_stream(def_arr, depth=27):
+    """
+    DFS with Warnsdorff move ordering + leaf pruning.
+    Only yields on forward progress (new max depth), then replays solution.
+    At each step, sort rotation choices 0-3 by how many free neighbors
+    the resulting next cell has (fewest = try first — Warnsdorff rule).
+    """
+    ALL = frozenset((x,y,z) for x in range(3) for y in range(3) for z in range(3))
+    count = [0]
+    pruned = [0]
+    best_depth = [0]
+
+    def warnsdorff_key(next_pos_t, occupied):
+        """Free neighbor count of next_pos, excluding occupied. Fewest = best."""
+        x, y, z = next_pos_t
+        n = 0
+        for dx, dy, dz in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
+            nb = (x+dx, y+dy, z+dz)
+            if nb not in occupied and 0 <= x+dx <= 2 and 0 <= y+dy <= 2 and 0 <= z+dz <= 2:
+                n += 1
+        return n
+
+    DONE = object()  # sentinel
+
+    async def dfs(op, occupied):
+        count[0] += 1
+        if count[0] % 300 == 0:
+            await asyncio.sleep(0)
+
+        # Pruning: bbox
+        snake_now = Snake(def_arr, op)
+        pos_list = snake_now.state
+        if not bbox_fits(pos_list):
+            pruned[0] += 1
+            return
+
+        remaining = depth - len(op)
+
+        # Pruning: leaf/degree-1
+        if _leaf_prune(occupied, remaining):
+            pruned[0] += 1
+            return
+
+        # Pruning: flood fill
+        if remaining > 0 and not free_cells_reachable(pos_list, remaining):
+            pruned[0] += 1
+            return
+
+        if len(op) >= depth:
+            yield op  # solution string
+            return
+
+        # Try all 4 rotations, sorted by Warnsdorff key of next cell
+        candidates = []
+        for r in range(4):
+            test = Snake(def_arr, op + str(r))
+            if test.check_if_valid():
+                next_pos = tuple(test.state[-1])
+                if next_pos not in occupied:
+                    key = warnsdorff_key(next_pos, occupied | {next_pos})
+                    candidates.append((key, r, next_pos))
+
+        # Sort: fewest free neighbors first (Warnsdorff)
+        candidates.sort(key=lambda x: x[0])
+
+        for _, r, next_pos in candidates:
+            child_op = op + str(r)
+            child_occ = occupied | {next_pos}
+
+            # Yield on forward depth progress
+            d = len(child_op)
+            if d > best_depth[0]:
+                best_depth[0] = d
+                child_snake = Snake(def_arr, child_op)
+                yield make_event(d, child_op, child_snake, False, count[0], "warnsdorff")
+
+            found = False
+            async for event in dfs(child_op, child_occ):
+                if isinstance(event, str):
+                    yield event  # pass solution up
+                    found = True
+                    break
+                else:
+                    yield event
+            if found:
+                return
+
+    yield make_event(1, "0", Snake(def_arr, "0"), False, 0, "warnsdorff")
+
+    start_occ = frozenset({(0,0,0)})
+    solution = None
+    async for event in dfs("0", start_occ):
+        if isinstance(event, str):
+            solution = event
+        else:
+            yield event
+
+    if solution:
+        logger.info(f"Warnsdorff solved in {count[0]} iters ({pruned[0]} pruned), solution={solution}")
+        async for frame in replay_solution(solution, def_arr, count[0], "warnsdorff"):
+            yield frame
+    else:
+        yield {"error": "Warnsdorff exhausted", "done": True, "iterations": count[0]}
+
 
 async def astar_stream(def_arr, depth=27):
     """
@@ -297,12 +459,8 @@ async def astar_stream(def_arr, depth=27):
 
         if done:
             logger.info(f"A* solved in {iterations} iters, solution={option}")
-            # Replay full solution cleanly step by step
-            for i in range(1, len(option) + 1):
-                partial = option[:i]
-                s = Snake(def_arr, partial)
-                await asyncio.sleep(0.06)
-                yield make_event(i, partial, s, i == len(option), iterations, "astar")
+            async for frame in replay_solution(option, def_arr, iterations, "astar"):
+                yield frame
             return
 
         for j in range(4):
@@ -320,17 +478,18 @@ async def astar_stream(def_arr, depth=27):
 
 # ── API ──────────────────────────────────────────────────────
 
-ALGOS = {"dfs", "bfs", "dfs_pruned", "astar"}
+ALGOS = {"dfs", "bfs", "dfs_pruned", "astar", "warnsdorff"}
 
 @app.get("/api/solve/stream")
-async def solve_stream(algo: str = Query(default="dfs", pattern="^(dfs|bfs|dfs_pruned|astar)$")):
+async def solve_stream(algo: str = Query(default="dfs", pattern="^(dfs|bfs|dfs_pruned|astar|warnsdorff)$")):
     """SSE endpoint — streams solver progress."""
     async def event_gen():
         gen = {
-            "dfs":        dfs_stream(def_arr),
-            "bfs":        bfs_stream(def_arr),
-            "dfs_pruned": dfs_pruned_stream(def_arr),
-            "astar":      astar_stream(def_arr),
+            "dfs":         dfs_stream(def_arr),
+            "bfs":         bfs_stream(def_arr),
+            "dfs_pruned":  dfs_pruned_stream(def_arr),
+            "astar":       astar_stream(def_arr),
+            "warnsdorff":  warnsdorff_stream(def_arr),
         }[algo]
         async for state in gen:
             yield {"data": json.dumps(state)}

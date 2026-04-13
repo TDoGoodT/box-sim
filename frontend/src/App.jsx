@@ -61,11 +61,11 @@ export default function App() {
   const [error, setError] = useState(null)
   const [algo, setAlgo] = useState('dfs')
 
-  // ── Recorded frames (solution replay) ──────────────────────
-  const [frames, setFrames] = useState([])        // all solution steps recorded
-  const [playerIdx, setPlayerIdx] = useState(0)   // current frame index
+  // ── Media player state ──────────────────────────────────────
+  const [frames, setFrames] = useState([])       // solution frames (27 steps)
+  const [playerIdx, setPlayerIdx] = useState(0)
   const [playing, setPlaying] = useState(false)
-  const [speedIdx, setSpeedIdx] = useState(2)     // default 1×
+  const [speedIdx, setSpeedIdx] = useState(2)    // default 1×
   const [playerActive, setPlayerActive] = useState(false)
 
   const esRef = useRef(null)
@@ -84,7 +84,7 @@ export default function App() {
     fetch(`${API}/def_arr`).then(r => r.json()).then(d => setDefArr(d.def_arr)).catch(() => {})
   }, [])
 
-  // ── Playback engine ─────────────────────────────────────────
+  // ── Playback helpers ────────────────────────────────────────
   const stopPlayback = useCallback(() => {
     clearInterval(playTimerRef.current)
     setPlaying(false)
@@ -99,33 +99,46 @@ export default function App() {
     setStep(f[clamped].step)
   }, [])
 
-  const startPlayback = useCallback(() => {
+  const startPlayback = useCallback((fromIdx = 0) => {
     const f = framesRef.current
     if (!f.length) return
     setPlaying(true)
-    const baseMs = 300
+    const baseMs = 400
     const intervalMs = baseMs / SPEEDS[speedIdx]
+    let idx = fromIdx
 
     playTimerRef.current = setInterval(() => {
-      setPlayerIdx(prev => {
-        const next = prev + 1
-        if (next >= f.length) {
-          clearInterval(playTimerRef.current)
-          setPlaying(false)
-          return prev
-        }
-        setPositions(f[next].positions)
-        setStep(f[next].step)
-        return next
-      })
+      idx += 1
+      if (idx >= f.length) {
+        clearInterval(playTimerRef.current)
+        setPlaying(false)
+        return
+      }
+      setPlayerIdx(idx)
+      setPositions(f[idx].positions)
+      setStep(f[idx].step)
     }, intervalMs)
   }, [speedIdx])
 
-  // Restart interval when speed changes while playing
+  // Restart interval when speed changes mid-play
   useEffect(() => {
     if (playing) {
-      stopPlayback()
-      startPlayback()
+      clearInterval(playTimerRef.current)
+      const f = framesRef.current
+      const baseMs = 400
+      const intervalMs = baseMs / SPEEDS[speedIdx]
+      let idx = playerIdx
+      playTimerRef.current = setInterval(() => {
+        idx += 1
+        if (idx >= f.length) {
+          clearInterval(playTimerRef.current)
+          setPlaying(false)
+          return
+        }
+        setPlayerIdx(idx)
+        setPositions(f[idx].positions)
+        setStep(f[idx].step)
+      }, intervalMs)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [speedIdx])
@@ -145,57 +158,55 @@ export default function App() {
     setPlayerIdx(0)
     setPlayerActive(false)
     framesRef.current = []
+    solutionBuildRef.current = []
 
     const es = new EventSource(`${API}/solve/stream?algo=${algo}`)
     esRef.current = es
 
+    // Phase tracking: searching → replay
+    let seenDone = false
+    let finalIters = 0
+    const replayFrames = []
+
     es.onmessage = (e) => {
       const data = JSON.parse(e.data)
+
       if (data.error) {
         setError(data.error)
         setSolving(false)
         es.close()
         return
       }
-      setPositions(data.positions)
-      setStep(data.step)
-      setIterations(data.iterations)
 
-      if (data.done) {
-        // Record ONLY the final solution replay frames
-        // We collect frames from the done event onward — but since
-        // warnsdorff/astar replay after done, we record from here.
-        // For simpler algos done=true on final step — record that frame.
-        const frame = { positions: data.positions, step: data.step }
-        framesRef.current = [frame]
-        setSolving(false)
-        setSolved(true)
-        es.close()
-      }
+      if (!seenDone) {
+        // Still searching — live view only
+        setPositions(data.positions)
+        setStep(data.step)
+        setIterations(data.iterations)
 
-      // Always record valid non-backtrack frames for solution path
-      if (!data.done && data.positions && data.positions.length === data.step) {
-        // This heuristic captures forward steps only (positions.length == step means all 27 placed)
-      }
-    }
+        if (data.done) {
+          // Solver found solution — backend will now stream clean 27-step replay
+          seenDone = true
+          finalIters = data.iterations
+          setSolving(false)
+          setSolved(true)
+        }
+      } else {
+        // Collecting clean solution replay frames (steps 1..27)
+        replayFrames.push({ positions: data.positions, step: data.step })
+        setPositions(data.positions)
+        setStep(data.step)
 
-    // Collect all SSE frames into framesRef for replay
-    // Re-attach a second listener to record everything
-    const esRecord = new EventSource(`${API}/solve/stream?algo=${algo}`)
-    const recorded = []
-    esRecord.onmessage = (e) => {
-      const data = JSON.parse(e.data)
-      if (data.error || !data.positions) { esRecord.close(); return }
-      recorded.push({ positions: data.positions, step: data.step })
-      if (data.done) {
-        framesRef.current = recorded
-        setFrames(recorded)
-        setPlayerIdx(0)
-        setPlayerActive(true)
-        esRecord.close()
+        if (data.done) {
+          // All 27 replay frames collected — activate player
+          framesRef.current = replayFrames
+          setFrames(replayFrames)
+          setPlayerIdx(replayFrames.length - 1)
+          setPlayerActive(true)
+          es.close()
+        }
       }
     }
-    esRecord.onerror = () => esRecord.close()
 
     es.onerror = () => {
       setError('Connection lost. Is the backend running?')
@@ -204,6 +215,7 @@ export default function App() {
     }
   }
 
+  // ── Solver ──────────────────────────────────────────────────
   const isComplete = solved && step === 27
   const totalFrames = frames.length
 
@@ -284,7 +296,7 @@ export default function App() {
             </span>
           </div>
 
-          {/* Progress bar (doubles as scrubber when player active) */}
+          {/* Scrubber — only when player ready */}
           {playerActive && totalFrames > 0 ? (
             <div className="slider-row">
               <label style={{ minWidth: 28, textAlign: 'right' }}>
@@ -308,56 +320,38 @@ export default function App() {
             </div>
           )}
 
-          {/* Media player — only when solution recorded */}
+          {/* Media player controls */}
           {playerActive && totalFrames > 0 && (
             <>
               <div className="playback">
-                {/* Skip to start */}
-                <button
-                  title="First frame"
-                  disabled={playerIdx === 0}
-                  onClick={() => { stopPlayback(); goToFrame(0) }}
-                >⏮</button>
+                <button title="First" disabled={playerIdx === 0}
+                  onClick={() => { stopPlayback(); goToFrame(0) }}>⏮</button>
 
-                {/* Step back */}
-                <button
-                  title="Previous step"
-                  disabled={playerIdx === 0}
-                  onClick={() => { stopPlayback(); goToFrame(playerIdx - 1) }}
-                >⏪</button>
+                <button title="Back one step" disabled={playerIdx === 0}
+                  onClick={() => { stopPlayback(); goToFrame(playerIdx - 1) }}>⏪</button>
 
-                {/* Play / Pause */}
-                <button
-                  className="play-pause"
+                <button className="play-pause"
                   title={playing ? 'Pause' : 'Play'}
                   onClick={() => {
                     if (playing) {
                       stopPlayback()
                     } else {
-                      if (playerIdx >= totalFrames - 1) goToFrame(0)
-                      startPlayback()
+                      const fromIdx = playerIdx >= totalFrames - 1 ? 0 : playerIdx
+                      goToFrame(fromIdx)
+                      startPlayback(fromIdx)
                     }
-                  }}
-                >
+                  }}>
                   {playing ? '⏸' : '▶'}
                 </button>
 
-                {/* Step forward */}
-                <button
-                  title="Next step"
-                  disabled={playerIdx >= totalFrames - 1}
-                  onClick={() => { stopPlayback(); goToFrame(playerIdx + 1) }}
-                >⏩</button>
+                <button title="Forward one step" disabled={playerIdx >= totalFrames - 1}
+                  onClick={() => { stopPlayback(); goToFrame(playerIdx + 1) }}>⏩</button>
 
-                {/* Skip to end */}
-                <button
-                  title="Last frame"
-                  disabled={playerIdx >= totalFrames - 1}
-                  onClick={() => { stopPlayback(); goToFrame(totalFrames - 1) }}
-                >⏭</button>
+                <button title="Last" disabled={playerIdx >= totalFrames - 1}
+                  onClick={() => { stopPlayback(); goToFrame(totalFrames - 1) }}>⏭</button>
               </div>
 
-              {/* Speed control */}
+              {/* Speed slider */}
               <div className="slider-row">
                 <label>Speed</label>
                 <input
