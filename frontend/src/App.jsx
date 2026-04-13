@@ -158,7 +158,6 @@ export default function App() {
     setPlayerIdx(0)
     setPlayerActive(false)
     framesRef.current = []
-    solutionBuildRef.current = []
 
     const es = new EventSource(`${API}/solve/stream?algo=${algo}`)
     esRef.current = es
