@@ -205,7 +205,7 @@ async def dfs_pruned_stream(def_arr, depth=27):
     count = 0
     pruned = 0
 
-    yield make_event(1, op, snake, False, 0, "dfs_pruned")
+    yield make_event(1, op, snake, False, 0, "dfs")
 
     while count < 2_000_000:
         if (count + pruned) % 500 == 0:
@@ -240,10 +240,10 @@ async def dfs_pruned_stream(def_arr, depth=27):
                 done = len(op) >= depth
                 if done:
                     logger.info(f"DFS+pruning solved in {count} iters ({pruned} pruned), solution={op}")
-                    async for frame in replay_solution(op, def_arr, count, "dfs_pruned"):
+                    async for frame in replay_solution(op, def_arr, count, "dfs"):
                         yield frame
                     return
-                yield make_event(len(op), op, snake, False, count, "dfs_pruned")
+                yield make_event(len(op), op, snake, False, count, "dfs")
             else:
                 snake.pop_last_block()
         except IndexError:
@@ -554,7 +554,7 @@ async def solve_stream(algo: str = Query(default="dfs", pattern="^(dfs|bfs|astar
     """SSE endpoint — streams solver progress."""
     async def event_gen():
         gen = {
-            "dfs":   dfs_stream(def_arr),
+            "dfs":   dfs_pruned_stream(def_arr),
             "bfs":   bfs_stream(def_arr),
             "astar": astar_stream(def_arr),
         }[algo]
