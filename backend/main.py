@@ -494,7 +494,7 @@ async def astar_stream(def_arr, depth=27):
     yield make_event(1, "0", init_snake, False, 0, "astar")
 
     while heap and iterations < 2_000_000:
-        if iterations % 200 == 0:
+        if iterations % 50 == 0:
             await asyncio.sleep(0)
 
         prio, _, option, positions, occupied, cur_dir = heapq.heappop(heap)
