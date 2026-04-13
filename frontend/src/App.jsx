@@ -165,7 +165,6 @@ export default function App() {
 
     // Phase tracking: searching → replay
     let seenDone = false
-    let finalIters = 0
     const replayFrames = []
 
     es.onmessage = (e) => {
@@ -179,31 +178,32 @@ export default function App() {
       }
 
       if (!seenDone) {
-        // Still searching — live view only
+        // Searching phase — show live progress
         setPositions(data.positions)
         setStep(data.step)
         setIterations(data.iterations)
 
-        if (data.done) {
-          // Solver found solution — backend will now stream clean 27-step replay
+        if (data.done && data.replay === false) {
+          // Search complete marker — switch to replay phase
           seenDone = true
-          finalIters = data.iterations
           setSolving(false)
           setSolved(true)
         }
       } else {
-        // Collecting clean solution replay frames (steps 1..27)
-        replayFrames.push({ positions: data.positions, step: data.step })
-        setPositions(data.positions)
-        setStep(data.step)
+        // Replay phase — collect clean 27-step frames
+        if (data.replay === true) {
+          replayFrames.push({ positions: data.positions, step: data.step })
+          setPositions(data.positions)
+          setStep(data.step)
 
-        if (data.done) {
-          // All 27 replay frames collected — activate player
-          framesRef.current = replayFrames
-          setFrames(replayFrames)
-          setPlayerIdx(replayFrames.length - 1)
-          setPlayerActive(true)
-          es.close()
+          if (data.done) {
+            // All frames collected — activate player
+            framesRef.current = replayFrames
+            setFrames(replayFrames)
+            setPlayerIdx(replayFrames.length - 1)
+            setPlayerActive(true)
+            es.close()
+          }
         }
       }
     }

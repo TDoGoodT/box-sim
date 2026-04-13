@@ -41,16 +41,36 @@ def make_event(step, option, snake, done, iterations, algo):
 
 async def replay_solution(solution_option, def_arr, iterations, algo, delay=0.06):
     """
-    Yield a clean 27-step replay of the solution, one block at a time.
-    The first event has done=False (search done marker), then steps 1..27,
-    with the final step having done=True (solution complete).
-    Called by every algo after finding the solution.
+    First yields a 'search done' marker (done=True, replay=False),
+    then yields a clean 27-step replay (done=False for steps 1-26, done=True for step 27).
     """
+    # Phase marker: search is done, replay starting
+    marker_snake = Snake(def_arr, solution_option)
+    yield {
+        "step": len(solution_option),
+        "option": solution_option,
+        "positions": states_to_json(marker_snake.state),
+        "valid": True,
+        "done": True,
+        "replay": False,
+        "iterations": iterations,
+        "algo": algo,
+    }
+    # Clean step-by-step replay
     for i in range(1, len(solution_option) + 1):
         partial = solution_option[:i]
         s = Snake(def_arr, partial)
         await asyncio.sleep(delay)
-        yield make_event(i, partial, s, i == len(solution_option), iterations, algo)
+        yield {
+            "step": i,
+            "option": partial,
+            "positions": states_to_json(s.state),
+            "valid": True,
+            "done": i == len(solution_option),
+            "replay": True,
+            "iterations": iterations,
+            "algo": algo,
+        }
 
 
 # ── Pruning helpers ──────────────────────────────────────────
