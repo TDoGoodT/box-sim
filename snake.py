@@ -155,14 +155,14 @@ class Snake(object):
 
     
     def check_if_valid(self) -> bool:
-        body = np.zeros((27, 27, 27), int)
-        for idx, state in enumerate(self.state, start=1):
-            if any([(x < 0 or x > 2) for x in state]):
+        seen = set()
+        for state in self.state:
+            t = (int(state[0]), int(state[1]), int(state[2]))
+            if t[0] < 0 or t[0] > 2 or t[1] < 0 or t[1] > 2 or t[2] < 0 or t[2] > 2:
                 return False
-            elif int(body[tuple(state)]) != 0:
+            if t in seen:
                 return False
-            else:
-                body[tuple(state)] = idx
+            seen.add(t)
         return True
 
 

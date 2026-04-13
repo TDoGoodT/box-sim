@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sse_starlette.sse import EventSourceResponse
-import sys, os, json, asyncio, logging
+import sys, os, json, asyncio, logging, math
 import heapq
 import numpy as np
 
@@ -300,30 +300,41 @@ def _count_free_neighbors(pos, occupied):
             count += 1
     return count
 
-def _leaf_prune(occupied, remaining):
+def _leaf_prune(occupied, remaining, tip=None):
     """
-    Fast O(27) check: any free cell with 0 free neighbors = isolated = prune.
-    More than 1 free cell with exactly 1 free neighbor = two dead-end leaves = prune
-    (Hamiltonian path can only have ONE endpoint / dead-end).
+    Fast O(27) check: any free cell with 0 free neighbors = isolated = prune
+    (unless it is adjacent to the snake tip and is the last remaining cell).
+    More than 1 non-tip-adjacent leaf = prune (Hamiltonian path has 1 endpoint).
     """
     if remaining == 0:
         return False
     ALL = frozenset((x,y,z) for x in range(3) for y in range(3) for z in range(3))
     free = ALL - occupied
     leaves = 0
+    tip_adjacent_leaves = 0
     for cell in free:
         x, y, z = cell
         nbr = 0
         for dx, dy, dz in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0),(0,0,1),(0,0,-1)]:
             if (x+dx, y+dy, z+dz) in free:
                 nbr += 1
+        tip_adj = False
+        if tip is not None:
+            tx, ty, tz = tip
+            tip_adj = abs(tx-x)+abs(ty-y)+abs(tz-z) == 1
         if nbr == 0:
-            return True   # isolated cell
+            if tip_adj:
+                # isolated but reachable from tip — only ok if it's the last cell
+                if remaining == 1:
+                    continue   # fine, snake goes there
+                return True    # isolated and not the last = prune
+            return True        # isolated and not reachable = prune
         if nbr == 1:
             leaves += 1
-            if leaves > 1:
-                return True  # two dead-end leaves → impossible
-    return False
+            if tip_adj:
+                tip_adjacent_leaves += 1
+    non_tip_leaves = leaves - tip_adjacent_leaves
+    return non_tip_leaves > 1
 
 async def warnsdorff_stream(def_arr, depth=27):
     """
@@ -392,7 +403,7 @@ async def warnsdorff_stream(def_arr, depth=27):
 
         remaining = depth - len(child_op)
 
-        if _leaf_prune(child_occ, remaining):
+        if _leaf_prune(child_occ, remaining, tip=next_pos):
             pruned += 1
             continue
 
@@ -420,84 +431,121 @@ async def warnsdorff_stream(def_arr, depth=27):
 
 async def astar_stream(def_arr, depth=27):
     """
-    A* search guided by a heuristic:
-      f(n) = -depth + penalty if not reachable
-    Yields EVERY valid state popped from the heap (not just new max depth),
-    so user sees continuous block placement including backtracking.
-    At the end, replays the full solution path step by step.
+    A* guided search — optimised for speed:
+      - Precomputed rotation lookup table (no trig, no scipy at runtime).
+      - Carries (positions list, occupied set, direction vector) in heap so
+        child states are computed incrementally (no Snake rebuild per pop).
+      - Uses Python set for collision detection (no 27³ numpy alloc).
+      - Applies bbox + flood-fill + leaf pruning before pushing children.
+      - Heuristic: prefer deeper nodes first (greedy-depth A*).
     """
-    counter = 0
 
-    def heuristic(positions):
-        score = 0
-        for p in positions:
-            score += (2 - p[0]) + (2 - p[1]) + (2 - p[2])
-        return score
+    # Precomputed: for each (cur_dir, rotation_code) when segment is a bend,
+    # new_dir = perpendicular_of(cur_dir) rotated around cur_dir by rc*90°.
+    # Generated once from Snake's actual rotation logic (scipy R.from_rotvec).
+    ROT_TABLE = {
+        ((1, 0, 0), 0): (0, 1, 0),  ((1, 0, 0), 1): (0, 0, 1),  ((1, 0, 0), 2): (0, -1, 0),  ((1, 0, 0), 3): (0, 0, -1),
+        ((-1, 0, 0), 0): (0, 1, 0), ((-1, 0, 0), 1): (0, 0, -1),((-1, 0, 0), 2): (0, -1, 0), ((-1, 0, 0), 3): (0, 0, 1),
+        ((0, 1, 0), 0): (0, 0, 1),  ((0, 1, 0), 1): (1, 0, 0),  ((0, 1, 0), 2): (0, 0, -1),  ((0, 1, 0), 3): (-1, 0, 0),
+        ((0, -1, 0), 0): (0, 0, 1), ((0, -1, 0), 1): (-1, 0, 0),((0, -1, 0), 2): (0, 0, -1), ((0, -1, 0), 3): (1, 0, 0),
+        ((0, 0, 1), 0): (1, 0, 0),  ((0, 0, 1), 1): (0, 1, 0),  ((0, 0, 1), 2): (-1, 0, 0),  ((0, 0, 1), 3): (0, -1, 0),
+        ((0, 0, -1), 0): (1, 0, 0), ((0, 0, -1), 1): (0, -1, 0),((0, 0, -1), 2): (-1, 0, 0), ((0, 0, -1), 3): (0, 1, 0),
+    }
 
-    def priority(option, positions):
-        d = len(positions)
-        remaining = depth - d
-        h = heuristic(positions)
-        if remaining > 0 and not free_cells_reachable(positions, remaining):
-            return (1000 - d, -h)
-        return (-d, -h)
+    def _next_pos_and_dir(positions, cur_dir, seg_idx, rotation_code):
+        if def_arr[seg_idx] == 1:
+            new_dir = ROT_TABLE[(cur_dir, rotation_code)]
+        else:
+            new_dir = cur_dir
+        last = positions[-1]
+        new_pos = (last[0]+new_dir[0], last[1]+new_dir[1], last[2]+new_dir[2])
+        return new_pos, new_dir
+
+    def _priority(d):
+        return -d   # deeper = better (greedy depth-first A*)
+
+    # ── initialise ───────────────────────────────────────────────────────────
 
     init_snake = Snake(def_arr, "0")
-    heap = []
-    heapq.heappush(heap, (priority("0", init_snake.state), counter, "0"))
-    visited = {"0": True}
+    init_pos   = [tuple(int(x) for x in p) for p in init_snake.state]
+    init_occ   = set(init_pos)
+    init_dir   = (1, 0, 0)
+
+    counter    = 0
     iterations = 0
+    best_depth = 0
+
+    # heap entry: (priority, counter, option_str, positions_list, occupied_set, direction_tuple)
+    heap = []
+    heapq.heappush(heap, (_priority(1), counter, "0", init_pos, init_occ, init_dir))
+
+    yield make_event(1, "0", init_snake, False, 0, "astar")
 
     while heap and iterations < 2_000_000:
-        if iterations % 100 == 0:
+        if iterations % 200 == 0:
             await asyncio.sleep(0)
 
-        prio, _, option = heapq.heappop(heap)
+        prio, _, option, positions, occupied, cur_dir = heapq.heappop(heap)
         iterations += 1
-
-        snake = Snake(def_arr, option)
-        if not snake.check_if_valid():
-            continue
-
         d = len(option)
 
-        # Yield EVERY state so user sees continuous progress
-        done = d >= depth
-        yield make_event(d, option, snake, False, iterations, "astar")
-
-        if done:
+        if d >= depth:
             logger.info(f"A* solved in {iterations} iters, solution={option}")
             async for frame in replay_solution(option, def_arr, iterations, "astar"):
                 yield frame
             return
 
-        for j in range(4):
-            child = option + str(j)
-            if visited.get(child):
+        # Stream a frame only when reaching a new depth level
+        if d > best_depth:
+            best_depth = d
+            snake = Snake(def_arr, option)
+            yield make_event(d, option, snake, False, iterations, "astar")
+
+        seg_idx = len(positions) - 1
+
+        for rotation_code in range(4):
+            new_pos, new_dir = _next_pos_and_dir(positions, cur_dir, seg_idx, rotation_code)
+
+            # bounds + collision check (O(1))
+            if not (0 <= new_pos[0] <= 2 and 0 <= new_pos[1] <= 2 and 0 <= new_pos[2] <= 2):
                 continue
-            visited[child] = True
-            child_snake = Snake(def_arr, child)
-            if not child_snake.check_if_valid():
+            if new_pos in occupied:
                 continue
-            p = priority(child, child_snake.state)
+
+            child_pos = positions + [new_pos]
+            child_occ = occupied | {new_pos}
+            child_d   = d + 1
+            remaining = depth - child_d
+
+            # bbox pruning
+            if not bbox_fits(child_pos):
+                continue
+
+            # flood-fill pruning
+            if remaining > 0 and not free_cells_reachable(child_pos, remaining):
+                continue
+
+            # leaf pruning
+            if _leaf_prune(child_occ, remaining, tip=new_pos):
+                continue
+
             counter += 1
-            heapq.heappush(heap, (p, counter, child))
+            heapq.heappush(heap, (_priority(child_d), counter, option + str(rotation_code),
+                                   child_pos, child_occ, new_dir))
 
 
 # ── API ──────────────────────────────────────────────────────
 
-ALGOS = {"dfs", "bfs", "dfs_pruned", "astar", "warnsdorff"}
+ALGOS = {"dfs", "bfs", "astar"}
 
 @app.get("/api/solve/stream")
-async def solve_stream(algo: str = Query(default="dfs", pattern="^(dfs|bfs|dfs_pruned|astar|warnsdorff)$")):
+async def solve_stream(algo: str = Query(default="dfs", pattern="^(dfs|bfs|astar)$")):
     """SSE endpoint — streams solver progress."""
     async def event_gen():
         gen = {
-            "dfs":         dfs_stream(def_arr),
-            "bfs":         bfs_stream(def_arr),
-            "dfs_pruned":  dfs_pruned_stream(def_arr),
-            "astar":       astar_stream(def_arr),
-            "warnsdorff":  warnsdorff_stream(def_arr),
+            "dfs":   dfs_stream(def_arr),
+            "bfs":   bfs_stream(def_arr),
+            "astar": astar_stream(def_arr),
         }[algo]
         async for state in gen:
             yield {"data": json.dumps(state)}
